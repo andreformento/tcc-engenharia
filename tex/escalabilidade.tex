@@ -1,17 +1,57 @@
 \chapter{Escalabilidade}
 
-\url{https://github.com/lhzsantana/escalabilidade}
 
-\section{Apache Kakfa}
-Apache Kakfa, para queueing
-\url{https://medium.com/@gabrielqueiroz/o-que-%C3%A9-esse-tal-de-apache-kafka-a8f447cac028}
+\section{Escalabilidade horizontal e vertical}
 
-\section{Apache Spark}
-Apache Spark, para streaming
-\url{https://www.infoq.com/br/presentations/spark-streaming-kafka-sem-perdas}
+\begin{citacao}
 
-\section{Apache Cassandra}
-Apache Cassandra, para registro de transações
+À medida que o volume de dados cresce, aumenta a
+necessidade de escalabilidade e melhoria de desempenho. Dentre as soluções para este
+problema, pode-se citar a escalabilidade vertical, que consiste em aumentar o poder de
+processamento e armazenamento das máquinas, e a escalabilidade horizontal, onde ocorre um
+aumento no número de máquinas disponíveis para o armazenamento e processamento de
+dados. Em comparação com a escalabilidade vertical, a escalabilidade horizontal tende a ser
+uma solução mais viável, porém requer que diversas threads/processos de uma tarefa sejam
+criadas e distribuídas. \cite[3]{alexandre-morais-souza-2013}.
+
+\end{citacao}
+
+A escalabilidade horizontal é preferível por diversos fatores - principalmente por
+permitir que seja possível ampliar a capacidade de processamento de requisições
+apenas aumentando a quantidade de nós (unidades de processamento/computadores).
+Além do que, dada uma arquitetura preparada, é possível fazer a automação da
+arquitetura para que permita que novos nós sejam adicionadas enquanto o
+sistema está recebendo requisições, tornando possível que aumente a capacidade
+de processamento \cite{ivens-oliveira-porto-2009}.
+
+Quando há um aumento significativo de processamento, memória, threads, etc,
+é possível que novas máquinas sejam incluídas como nós de processamentos.
+Isso é possível devido ao monitoramento das máquinas existentes na arquitetura
+da aplicação. Ou seja, um parâmetro de máximo de processamento de 80\% é configurado.
+Quando a aplicação atingir esse parâmetro, outro nó poderá ser iniciado para ajudar
+a atender as demandas do sistema. Da mesma forma, pode ser configurada uma utilização
+mínima. Por exemplo, quando o processamento chegar à 20\% de utilização, uma máquina
+deve ser finalizada, economizando custos de infraestrutura.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% daqui pra baixo são apenas comentários que fiz:
+
+% \url{https://github.com/lhzsantana/escalabilidade}
+% 
+% \section{Apache Kakfa}
+% Apache Kakfa, para queueing
+% \url{https://medium.com/@gabrielqueiroz/o-que-%C3%A9-esse-tal-de-apache-kafka-a8f447cac028}
+% 
+% \section{Apache Spark}
+% Apache Spark, para streaming
+% \url{https://www.infoq.com/br/presentations/spark-streaming-kafka-sem-perdas}
+% 
+% \section{Apache Cassandra}
+% Apache Cassandra, para registro de transações
 
 % vou ver exatamente como escrever sobre os seguintes assuntos:
 % 
@@ -19,3 +59,4 @@ Apache Cassandra, para registro de transações
 % Rest para requisições síncronas 
 % Kafka para gerenciar fila de processamento (garantir ordem)
 % Websocket para receber notificações (mosquitto 
+
