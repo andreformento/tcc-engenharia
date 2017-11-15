@@ -13,11 +13,11 @@ cd tex
 #     pdflatex monografia.tex                                    && \
 #     pdflatex monografia.tex
 
-docker run -it -v "$PWD":/data -w /data andreformento/latex pdflatex -synctex=1 -interaction=nonstopmode monografia.tex
-docker run -it -v "$PWD":/data -w /data andreformento/latex bibtex monografia.aux
-docker run -it -v "$PWD":/data -w /data andreformento/latex makeindex monografia.tex
-docker run -it -v "$PWD":/data -w /data andreformento/latex pdflatex -synctex=1 -interaction=nonstopmode monografia.tex
-docker run -it -v "$PWD":/data -w /data andreformento/latex pdflatex -synctex=1 -interaction=nonstopmode monografia.tex
+docker run --rm -it -v "$PWD":/data -w /data andreformento/latex pdflatex -synctex=1 -interaction=nonstopmode monografia.tex
+docker run --rm -it -v "$PWD":/data -w /data andreformento/latex bibtex monografia.aux
+docker run --rm -it -v "$PWD":/data -w /data andreformento/latex makeindex monografia.tex
+docker run --rm -it -v "$PWD":/data -w /data andreformento/latex pdflatex -synctex=1 -interaction=nonstopmode monografia.tex
+docker run --rm -it -v "$PWD":/data -w /data andreformento/latex pdflatex -synctex=1 -interaction=nonstopmode monografia.tex
 
 mv monografia.pdf ../
 
