@@ -1,1 +1,56 @@
 \chapter{Implementação do serviço}
+
+Para realizar testes de uma situação real referente às teorias citadas, foi
+criado um serviço que registra reservas de ingressos. O serviço possui código
+fonte open-source e pode ser acessado em
+\url{https://github.com/andreformento/term-paper}.
+
+\section{Código fonte}
+Este serviço é uma aplicação escrita na linguagem Java na versão 8. O paradigma
+da implementação do código fonte foi Orientação à Objetos. Porém, possui alguns
+princípios de programação funcional - como é o caso da técnica de imutabilidade.
+
+\index{alíneas}\index{subalíneas}\index{incisos}Conforme
+\cite{does-immutability-really-mean-thread-safety} e \cite{java-doc-immutable-objects},
+essa técnica de imutabilidade traz vários benefícios:
+
+\begin{alineas}
+
+  \item Objetos imutáveis facilitam a programação concorrente;
+
+  \item Mudança indesejada em códigos dispersos;
+
+  \item Simplicidade de manutenção do código;
+
+  \item Como a implementação foi em Java, traz benefícios quanto ao algorítimo do
+        Garbage Collector.
+
+\end{alineas}
+
+\lstset{language=Java,keywordstyle={\bfseries \color{blue}}}
+
+O primeiro ponto é o mais relevante para a solução, visto que, concorrencia
+eficiente é um dos pontos mais importantes. Com a palavra chave \textbf{final} é
+possível definir que os atributos da classe não poderão ser alterados depois
+de inicializados, conforme exemplo do \autoref{classe-ticket}.
+
+\begin{lstlisting}[label=classe-ticket,caption=Classe Ticket em Java]
+public class Ticket implements Serializable {
+
+    @NotNull
+    private final String idEvent;
+
+    @NotNull
+    private final String idUser;
+
+    @ConstructorProperties({"idEvent", "idUser"})
+    public Ticket(String idEvent, String idUser) {
+        this.idEvent = idEvent;
+        this.idUser = idUser;
+    }
+    // getters, setters, equals...
+}
+\end{lstlisting}
+
+%\section{API}
+%rest, endpoints
