@@ -16,3 +16,5 @@ rm -f *.blg
 rm -f *.brf
 rm -f *.bbl
 rm -f *.gz
+rm -f *.pyg
+rm -f *.lol
