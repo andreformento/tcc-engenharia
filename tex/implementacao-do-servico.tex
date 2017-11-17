@@ -55,11 +55,82 @@ public class Ticket implements Serializable {
 \subsection{Spring Boot Framework}
 
 Foi utilizado um framework em Java que possibilita a rápida criação de aplicações.
-Conforme \cite[8]{spring-boot-reference-guide}, o Spring Boot Framework, torna
+Conforme \cite[8]{spring-boot-reference-guide}, o Spring Boot Framework torna
 produtiva a criação de serviços que rodam de maneira independente, isolada
 e com várias opções de acoplar outras bibliotecas que são comuns no desenvolvimento
 de software, como integração com banco de dados, sistemas de mensageria, geração
 de documentação a partir do código, etc.
 
-%\section{API}
+%\section{Banco de dados}
+%O banco de dados escolhido foi o MongoDB
+
+\subsection{API}
+
+A aplicação desenvolvida gera uma API REST (\autoref{rest}) que é responsável por fazer uma reserva
+no evento solicitado. Desta forma, este serviço atende o escopo de reserva de lugar no
+evento. Conforme exibido no \autoref{classe-ticket-controller}, existe um endpoint responsável
+por fazer essa reserva. Ele tem um contrato que permite que seja informado o evento e
+o usuário para realizar a reserva, simplificando a sua utilização.
+
+\index{alíneas}\index{subalíneas}\index{incisos}
+Conforme descrito por \cite{mark-richards-software-architecture-patterns},
+foi utilizada a arquitetura por camadas para organizar as classes.
+A classe \textbf{TicketController} está na camada \textbf{presentation} e tem a
+responsabilidade de receber requisições, converter para o padrão utilizado na
+aplicação e chamar a classe responsável pela lógica.
+Esta classe possui dependência de duas classes:
+
+\begin{alineas}
+
+  \item \textbf{TicketService}
+
+  \begin{alineas}
+     \item Fica na camada \textbf{business};
+     \item Responsável por lidar com as regras de negócio/lógica do ingresso;
+     \item É ela a reponsável por lidar com as validações;
+  \end{alineas}
+
+  \item \textbf{TicketMapper}
+
+  \begin{alineas}
+     \item Fica na camada \textbf{presentation};
+     \item Responsável por converter o que vem de fora da aplicação e transformar
+           no padrão adotado dentro da aplicação;
+     \item E também o inverso do item anterior: o que for gerado dentro da aplicação -
+           seguindo um padrão definido, ela é reponsável por converter
+           os dados a serem expostos de modo que mantenha um contrato pré-determinado
+  \end{alineas}
+
+\end{alineas}
+
+\begin{lstlisting}[label=classe-ticket-controller,caption=Classe TicketController em Java]
+@RestController
+@RequestMapping("/events")
+public class TicketController {
+
+    private final TicketService service;
+    private final TicketMapper mapper;
+
+    public TicketController(TicketService service, TicketMapper mapper) {
+        this.service = service;
+        this.mapper = mapper;
+    }
+
+    @PostMapping
+    @RequestMapping("/{idEvent}/tickets")
+    public HttpEntity<Resource<TicketResponse>> booking(
+        @PathVariable("idEvent") String idEvent,
+        @RequestBody final TicketRequest ticketRequest
+    ) {
+
+        return mapper.mapToResponse(service.booking(mapper.mapFromRequest(idEvent, ticketRequest)));
+    }
+
+}
+\end{lstlisting}
+
+\subsection{REST}\label{rest}
+
+Um exemplo de chamada HTTP que pode ser feito é o seguinte...
+
 %rest, endpoints
