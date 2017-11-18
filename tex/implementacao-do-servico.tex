@@ -131,6 +131,52 @@ public class TicketController {
 
 \subsection{REST}\label{rest}
 
-Um exemplo de chamada HTTP que pode ser feito é o seguinte...
+\begin{citacao}
+
+REST é um dos modelos de arquitetura que foi descrito por
+Roy Fielding \cite[5]{rest-roy-thomas-fielding},
+um dos principais criadores do protocolo HTTP, em sua tese de doutorado
+e que foi adotado como o modelo a ser utilizado na evolução da arquitetura
+do protocolo HTTP.
+
+[...] REST na verdade pode ser considerado como um conjunto de princípios,
+que quando aplicados de maneira correta em uma aplicação, a beneficia com a
+arquitetura e padrões da própria Web. \cite{rest-principios-e-boas-praticas}.
+
+\end{citacao}
+
+Conforme descrito por \cite{rest-principios-e-boas-praticas}, as aplicações
+gerenciam informação que pode ser tratada como recurso. Este recurso que é
+gerenciado pela aplicação deve possuir uma identificação única para que seja
+possível diferenciar o recurso a ser manipulado em uma requisição.
+
+No protocolo HTTP os recursos podem ser identificados com
+URI's (Uniform Resource Identifier) - também conhecido como endpoint.
+Desta forma, conforme exibido no \autoref{classe-ticket-controller},
+a aplicação criada possui o seguinte endpoint:
+
+\begin{lstlisting}[basicstyle=\ttfamily]
+http://localhost:8080/events/\{idEvent\}/tickets
+(1)    (2)       (3) (4)     (4)
+\end{lstlisting}
+
+\index{enumerate}Este endpoint espera uma requisição seguindo o protocolo HTTP
+com o método \textbf{POST}, onde cada parte é explicada abaixo:
+
+\begin{enumerate}
+
+  \item Objetos imutáveis facilitam a programação concorrente;
+
+  \item Mudança indesejada em códigos dispersos;
+
+  \item Simplicidade de manutenção do código;
+
+  \item Como a implementação foi em Java, traz benefícios quanto ao algorítimo do
+        Garbage Collector.
+
+\end{enumerate}
+
+O seu objetivo é realizar a reserva de um lugar em um determinado evento para um
+usuário.
 
 %rest, endpoints
