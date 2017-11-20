@@ -139,10 +139,20 @@ como Facebook, Google Docs e Linkedin.
 
 \subsubsection{BaaS}\label{baas}
 
-No modelo Backend as a Service ou Software como Serviço (BaaS), ou ainda,
-Serverless Architectures, fica abstraído inclusive a arquitetura de software da aplicação,
+Para esse modelo que é mais novo, há várias formas de definí-lo:
+Backend as a Service ou Software como Serviço (BaaS); Serverless Architectures; ou ainda,
+Functions as a service (FaaS).
+Nele fica abstraído inclusive a arquitetura de software da aplicação,
 tendo como opção apenas desenvolver funções internas para execução. Desta forma, há grande
-dependência da plataforma em que roda a aplicação
+dependência da plataforma em que roda a aplicação.
+Há vários serviços que podem ser facilmente consumidos como serviço de chat, segurança com
+OAuth, dentro outros.
+Conforme \cite{martin-serverless}, há uma dependência também do ambiente em que roda o
+código fonte, podendo inclusive necessitar de manutenção posterior em algo que está
+funcionando pelo simples fato do fornecedor realizar alguma atualização.
+Ou seja, há um forte dependência com o fornecedor.
+
+Alguns exemplos de BaaS são a AWS Lambda e Google Firebase.
 
 \begin{citacao}
 Um BaaS pode ser visto como uma ponte conectando o backend e o frontend de uma aplicação.
@@ -150,3 +160,5 @@ Os BaaS auxiliam os desenvolvedores a acelerar a criação de aplicações web e
 simplificam a criação de APIs. Em vez de codificar o backend inteiro, o desenvolvedor usa
 o BaaS para criar as APIs e conectá-las às aplicações \cite{backend-as-a-service-pros-e-contras}.
 \end{citacao}
+
+\input{plataformas-em-nuvem}
