@@ -61,23 +61,92 @@ A ideia principal é que essa infraestrutura seja obtida de forma dinâmica. Por
 ter uma infraestrutura local, ou própria, é inviável para a solução do problema da
 venda de ingressos.
 
-\section{@Infraestrutura em nuvem}\label{infraestrutura-em-nuvem}
+\section{Infraestrutura em nuvem}\label{infraestrutura-em-nuvem}
 
-\url{https://sistemas.eel.usp.br/docentes/arquivos/5840003/444/Cloudcomputing.pdf}
+Conforme \cite{what-is-cloud-computing}, computação em nuvem proporciona poder computacional
+sob demanda através da internet. Desta forma, é possível que haja aumento de poder
+de processamento conforme a necessidade do negócio - pagando apenas pelo que for utilizado.
 
-% https://aws.amazon.com/pt/what-is-cloud-computing/
+\begin{citacao}
+A computação em "nuvem", o chamado cloud computing, é um conceito que permite o acesso a
+um conjunto de recursos como de processamento, armazenamento, conectividade, plataformas,
+aplicações e serviços disponibilizados na Internet. Conjuntos de supercomputadores, que operam em
+rede, formam a chamada "nuvem", que armazena softwares, documentos e aplicativos de um sistema.
+Para ter acesso aos arquivos, basta que o usuário do cloud tenha acesso à internet
+\cite{cloud-computing-conceitos-e-perspectivas-2012}.
+\end{citacao}
 
-pelo que vi tem mais artigos aqui: \url{https://canaltech.com.br/corporate/computacao-na-nuvem/}
+Não é necessário grande investimento inicial em para disponibilizar uma aplicação web.
+Como o pagamento é pelo que for utilizado, se uma aplicação em determinado período tem
+poucos acesso, então, pagará pouco, nos momento onde há grande demanda, pagará por aquilo
+que estiver utilizando. E é justamente essa flexibilidade que é fundamental para o sucesso
+da solução proposta. Ou seja, toda a demanda de compra de ingressos poderá ser atendida
+sem necessidade de investimentos em infraestrutura.
 
-\url{https://aws.amazon.com/pt/types-of-cloud-computing/}
+Conforme \cite{types-of-cloud-computing}, a computação em nuvem facilita a disponibilização
+de aplicações aos desenvolvedores fazendo com quem foquem seu trabalho no desenvolvimento
+do software.
 
-\subsection{@IaaS}
+% pelo que vi tem mais artigos aqui: \url{https://canaltech.com.br/corporate/computacao-na-nuvem/}
+% http://www.each.usp.br/dc/aulas/ComputacaoEmNuvem-DanielCordeiro.pdf
 
-pode especificar cada uma delas:
-\url{https://apprenda.com/library/paas/iaas-paas-saas-explained-compared/}
+\subsection{Tipologia das plataformas em nuvem}\label{tipologia-das-plataformas-em-nuvem}
 
-\url{https://antonioricardo.org/2013/03/28/o-que-e-saas-iaas-e-paas-em-cloud-computing-conceitos-basicos/}
+Com a popularização da computação em nuvem houve um aumento dos produtos e opções de
+serviços disponíveis para atendenr .
+Desta forma, foram criados vários modelos e estratégias para
+utilização da computação em nuvem onde cada uma dessas estratégias foca em determinado
+nível de
+Há três principais formatos de nuvem que podem ser explorados:
+IaaS (\autoref{iaas}), PaaS (\autoref{paas}) e SaaS (\autoref{saas})).
+Recentamente vem surgindo um quarto formato que ainda é visto pelo mercado com
+cautela: BaaS (\autoref{baas}).
 
-\subsection{@PaaS}
+% https://sistemas.eel.usp.br/docentes/arquivos/5840003/444/Cloudcomputing.pdf
+% pagina 10
 
-\subsection{@SaaS}
+%\url{https://aws.amazon.com/pt/types-of-cloud-computing/}
+
+
+\subsubsection{IaaS}\label{iaas}
+
+No modelo Infrastructure as a Service ou Infra-estrutura como Serviço (IaaS)
+não há controle sobre o sistema operacional. O objetivo é o fornecimento
+de recursos de computação necessário para poder rodar uma aplicação. Há acesso (virtual
+ou hardware dedicado) em recursos de rede, computadores e acesso para armazenamento
+de dados.
+Um exemplo é o produto EC2 da Amazon.
+
+%pode especificar cada uma delas:
+%\url{https://apprenda.com/library/paas/iaas-paas-saas-explained-compared/}
+%\url{https://antonioricardo.org/2013/03/28/o-que-e-saas-iaas-e-paas-em-cloud-computing-conceitos-basicos/}
+
+\subsubsection{PaaS}\label{paas}
+
+No modelo Plataform as a Service ou Plataforma como Serviço (PaaS)
+o foco é no gerenciamento da implantação e gerenciamento das aplicações.
+Não há preocupação com aquisição de recursos planejamento de capacidade, manutenção de
+software patching ou qualquer outro trabalho de baixo nível. O Google AppEngine e a
+Amazon S3 são exemplos de PaaS.
+
+\subsubsection{SaaS}\label{saas}
+
+Neste modelo Software as a Service ou Software como Serviço (SaaS)
+há a disponibilidade de ter um produto completo podendo ser oferecido
+inclusive como um aplicação para o usuário final. Aqui não há preocupações com serviço
+e nem gerenciamento de infraestrutura. Um exemplo claro é o serviço de webmail, assim
+como Facebook, Google Docs e Linkedin.
+
+\subsubsection{BaaS}\label{baas}
+
+No modelo Backend as a Service ou Software como Serviço (BaaS), ou ainda,
+Serverless Architectures, fica abstraído inclusive a arquitetura de software da aplicação,
+tendo como opção apenas desenvolver funções internas para execução. Desta forma, há grande
+dependência da plataforma em que roda a aplicação
+
+\begin{citacao}
+Um BaaS pode ser visto como uma ponte conectando o backend e o frontend de uma aplicação.
+Os BaaS auxiliam os desenvolvedores a acelerar a criação de aplicações web e mobile e
+simplificam a criação de APIs. Em vez de codificar o backend inteiro, o desenvolvedor usa
+o BaaS para criar as APIs e conectá-las às aplicações \cite{backend-as-a-service-pros-e-contras}.
+\end{citacao}
