@@ -1,8 +1,46 @@
 \chapter{@Microserviços}
 
-Microserviços tem MUITO assunto, aqui vc pode escrever muita coisa,
-gerar muitos tópicos... com certeza escreveremos muito aqui
+%Microserviços tem MUITO assunto, aqui vc pode escrever muita coisa,
+%gerar muitos tópicos... com certeza escreveremos muito aqui
+%
+%pode começar por isso:
+%
+%\url{https://www.thoughtworks.com/pt/insights/blog/microservices-nutshell}
 
-pode começar por isso:
 
-\url{https://www.thoughtworks.com/pt/insights/blog/microservices-nutshell}
+
+Com microserviços é possível escalar apenas algumas partes do sistema, diminuindo
+o custo e esforço para aumentar o poder de processamento para atender muitas requisições.
+
+Pode haver um serviço que cuida do contexto do usuário; outro serviço que lida com a
+lista de eventos disponíveis; outro serviço responsável por realizar reserva de vaga de
+cada evento; e assim por diante. Ou seja, cada um desses serviços pode ter a sua a quantidade
+de requisições diferentes umas das outras, mas os serviços poderão ser escalados de forma
+independente e conforme a necessidade.
+
+Um exemplo real pode ser objservado em um e-commerce.
+
+\begin{citacao}
+
+Ao criarmos a Editora Casa do Código, decidimos seguir outro caminho para o e-commerce.
+Lá não podemos correr o risco de ficar com a loja fora do ar caso alguma funcionalidade
+periférica falhe, então quebramos nossa arquitetura em serviços menores. Dessa forma, há
+um sistema principal, que é a loja e está hospedada no Shopify, e vários outros sistemas
+que gravitam em torno dela. Temos uma aplicação que faz a liberação dos e-books para os
+clientes, outro que contabiliza os royalties para autores, outro para cuidar da logística
+de envio dos livros impressos para o cliente, um painel de visualização dos livros comprados,
+um para fazer a liberação de vale presentes e outro para promoções.
+
+Dessa forma, quando um evento acontece na nossa loja online, os diferentes sistemas precisam
+ser notificados. Para essas notificações usamos requisições HTTP, assim, quando uma compra
+é confirmada na loja online, todos os sistemas recebem em um Endpoint essa requisição HTTP,
+contendo um JSON com todos os dados da compra. Cada sistema decide o que fazer com as informações
+recebidas, de acordo com a necessidade. Por exemplo, o sistema de liberação dos e-books verifica
+se a compra possuía e-books e gera os links de download para o comprador, enquanto que o sistema
+de logística já dá baixa no estoque quando a compra é de um impresso, além de notificar as pessoas
+quando algum livro está ficando com estoque crítico. Essa característica importante para o maior
+desacoplamento dos serviços é conhecida como Smart endpoints, dumb pipes, que em uma tradução
+livre pode ser entendida como Endpoints inteligentes e fluxos
+simples. \cite{arquitetura-de-microservicos-ou-monolitica}.
+
+\end{citacao}
