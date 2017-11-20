@@ -159,8 +159,8 @@ a aplicação criada possui o seguinte endpoint:
 % https://tex.stackexchange.com/questions/73231/avoid-page-breaks-in-lstlistings
 \begin{minipage}{\linewidth}
 \begin{lstlisting}[basicstyle=\ttfamily]
-http://localhost:8080/events/\{idEvent\}/tickets
-(1)    (2)       (3) (4)     (4)
+http://localhost:8080/events/{idEvent}/tickets
+(1)    (2)       (3) (4)     (5)      (4)
 \end{lstlisting}
 \end{minipage}
 
@@ -170,13 +170,14 @@ realizar a reserva de um lugar em um determinado evento para um usuário.
 
 \begin{enumerate}
 
-  \item Objetos imutáveis facilitam a programação concorrente;
+  \item esquema ou protocolo da requisição;
 
-  \item Mudança indesejada em códigos dispersos;
+  \item endereço da aplicação;
 
-  \item Simplicidade de manutenção do código;
+  \item porta de acesso à aplicação;
 
-  \item Como a implementação foi em Java, traz benefícios quanto ao algorítimo do
-        Garbage Collector.
+  \item nome do recurso único da aplicação (URI);
+
+  \item identificação do evento que será feita a reserva.
 
 \end{enumerate}
