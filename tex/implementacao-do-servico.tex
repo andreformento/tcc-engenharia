@@ -155,10 +155,14 @@ URI's (Uniform Resource Identifier) - também conhecido como endpoint.
 Desta forma, conforme exibido no \autoref{classe-ticket-controller},
 a aplicação criada possui o seguinte endpoint:
 
+% unbreak page não quebra página
+% https://tex.stackexchange.com/questions/73231/avoid-page-breaks-in-lstlistings
+\begin{minipage}{\linewidth}
 \begin{lstlisting}[basicstyle=\ttfamily]
 http://localhost:8080/events/\{idEvent\}/tickets
 (1)    (2)       (3) (4)     (4)
 \end{lstlisting}
+\end{minipage}
 
 \index{enumerate}Este endpoint espera uma requisição seguindo o protocolo HTTP
 com o método \textbf{POST}, onde cada parte é explicada abaixo:
