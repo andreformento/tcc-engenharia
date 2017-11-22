@@ -32,10 +32,10 @@ essa técnica de imutabilidade traz vários benefícios:
 O primeiro ponto é o mais relevante para a solução, visto que, concorrencia
 eficiente é um dos pontos mais importantes. Com a palavra chave \textbf{final} é
 possível definir que os atributos da classe não poderão ser alterados depois
-de inicializados, conforme exemplo do \autoref{classe-ticket}.
+de inicializados, conforme exemplo do \autoref{classe-ticket-reservation}.
 
-\begin{lstlisting}[label=classe-ticket,caption=Classe Ticket em Java]
-public class Ticket implements Serializable {
+\begin{lstlisting}[label=classe-ticket-reservation,caption=Classe TicketReservation em Java]
+public class TicketReservation implements Serializable {
 
     @NotNull
     private final String idEvent;
@@ -44,7 +44,7 @@ public class Ticket implements Serializable {
     private final String idUser;
 
     @ConstructorProperties({"idEvent", "idUser"})
-    public Ticket(String idEvent, String idUser) {
+    public TicketReservation(String idEvent, String idUser) {
         this.idEvent = idEvent;
         this.idUser = idUser;
     }
@@ -68,21 +68,21 @@ de documentação a partir do código, etc.
 
 A aplicação desenvolvida gera uma API REST (\autoref{rest}) que é responsável por fazer uma reserva
 no evento solicitado. Desta forma, este serviço atende o escopo de reserva de lugar no
-evento. Conforme exibido no \autoref{classe-ticket-controller}, existe um endpoint responsável
+evento. Conforme exibido no \autoref{classe-ticket-reservation-reservation-controller}, existe um endpoint responsável
 por fazer essa reserva. Ele tem um contrato que permite que seja informado o evento e
 o usuário para realizar a reserva, simplificando a sua utilização.
 
 \index{alíneas}\index{subalíneas}\index{incisos}
 Conforme descrito por \cite{mark-richards-software-architecture-patterns},
 foi utilizada a arquitetura por camadas para organizar as classes.
-A classe \textbf{TicketController} está na camada \textbf{presentation} e tem a
+A classe \textbf{TicketReservationController} está na camada \textbf{presentation} e tem a
 responsabilidade de receber requisições, converter para o padrão utilizado na
 aplicação e chamar a classe responsável pela lógica.
 Esta classe possui dependência de duas classes:
 
 \begin{alineas}
 
-  \item \textbf{TicketService}
+  \item \textbf{TicketReservationService}
 
   \begin{alineas}
      \item Fica na camada \textbf{business};
@@ -90,7 +90,7 @@ Esta classe possui dependência de duas classes:
      \item É ela a reponsável por lidar com as validações;
   \end{alineas}
 
-  \item \textbf{TicketMapper}
+  \item \textbf{TicketReservationMapper}
 
   \begin{alineas}
      \item Fica na camada \textbf{presentation};
@@ -103,27 +103,27 @@ Esta classe possui dependência de duas classes:
 
 \end{alineas}
 
-\begin{lstlisting}[label=classe-ticket-controller,caption=Classe TicketController em Java]
+\begin{lstlisting}[label=classe-ticket-reservation-reservation-controller,caption=Classe TicketReservationController em Java]
 @RestController
 @RequestMapping("/events")
-public class TicketController {
+public class TicketReservationController {
 
-    private final TicketService service;
-    private final TicketMapper mapper;
+    private final TicketReservationService service;
+    private final TicketReservationMapper mapper;
 
-    public TicketController(TicketService service, TicketMapper mapper) {
+    public TicketReservationController(TicketReservationService service, TicketReservationMapper mapper) {
         this.service = service;
         this.mapper = mapper;
     }
 
     @PostMapping
     @RequestMapping("/{idEvent}/tickets")
-    public HttpEntity<Resource<TicketResponse>> booking(
+    public HttpEntity<Resource<TicketReservationResponse>> booking(
         @PathVariable("idEvent") String idEvent,
-        @RequestBody final TicketRequest ticketRequest
+        @RequestBody final TicketReservationRequest TicketReservationRequest
     ) {
 
-        return mapper.mapToResponse(service.booking(mapper.mapFromRequest(idEvent, ticketRequest)));
+        return mapper.mapToResponse(service.booking(mapper.mapFromRequest(idEvent, TicketReservationRequest)));
     }
 
 }
@@ -152,7 +152,7 @@ possível diferenciar o recurso a ser manipulado em uma requisição.
 
 No protocolo HTTP os recursos podem ser identificados com
 URI's (Uniform Resource Identifier) - também conhecido como endpoint.
-Desta forma, conforme exibido no \autoref{classe-ticket-controller},
+Desta forma, conforme exibido no \autoref{classe-ticket-reservation-reservation-controller},
 a aplicação criada possui o seguinte endpoint:
 
 % unbreak page não quebra página
