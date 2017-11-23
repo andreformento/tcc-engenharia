@@ -1,7 +1,70 @@
 \chapter{@Balanceador de carga}
 
-Load balancer \url{https://www.ppgia.pucpr.br/pt/arquivos/mestrado/dissertacoes/2012/cesar_angonese_vs.pdf}
 
-\url{http://www.dpi.ufv.br/arquivos/ppgcc/dissertacoes/2009-ms-Hebert_Luiz_Amaral_Costa.pdf}
+A necessidade constante de mais disponibilidade em serviços, impulsionou a criação de uma técnica computacional 
+que consegue atender uma exigência cada vez mais comum e em muitos casos indispensável. Quando o balanceamento 
+de carga foi implementado, esperava-se sanar um problema que causava uma série de inconsistências. A técnica pode
+ser usada em vários componentes. Ao exemplo do balanceamento de armazenamento (storage), que possibilita o 
+armazenamento, e distribuição de acesso compartilhados em vários discos. Sua eficiência e a redução no custo das 
+peças possibilitaram muitos aderirem ao sistema de distribuição carga através de discos  que hoje podem ser 
+encontrados de computadores domésticos até supercomputadores. Quando fala-se em balanceamento de rede, consiste 
+na técnica de distribuição de tráfego de rede entre servidores.
 
-\url{http://www.ufjf.br/pgcc/files/2014/06/Leonardo-Costa.pdf}
+
+Encontrado em todas as camadas do modelo OSI, essa solução visa entregar caminhos alternativos a fim de descongestionar
+os acessos atendendo um número maior de requisições. O balanceamento de CPU é construido com o intuito de equilibrar o
+processamento de dados através do compartimento computacional. Usado em sistemas de processamento distribuído e 
+organizado de tal forma que atende os mais altos índices de solicitações de processamento de informações. Os 
+balanceadores que fora apresentados são normalmente encontrados em grandes centros de processamento. Organizações 
+que atuam provendo conteúdo na rede mundial de computadores, centros de pesquisas, instituições de ensino e no âmbito
+governamental.
+
+
+A alta escalabilidade está intrinsecamente ligada ao balanceamento de carga que está implementado, isso porque a medida 
+que a aplicação alocada expande-se ao ponto de um servidor não conseguir atender a demanda de processamento adequadamente,
+este necessita escalar processamento para outros servidores. O balanceamento é um recurso utilizado para que a alta
+disponibilidade tenha eficácia e mantenha serviços ativos. Uma vez escalado o processamento, este pode apresentar lentidão
+e baixo desempenho, um dos problemas que pode-se identificar com esse comportamento é a infraestrutura instalada. 
+O alto desempenho é obtido se o balanceamento de carga dividir as tarefas dos serviços de forma inteligentes, ou seja, 
+que consiga direcionar as novas requisições aos servidores mais ociosos, com um gerenciamento deficiente cria-se gargalos
+na aplicação e ônus aos equipamentos.
+
+
+Juntamente aos já mencionados, a alta disponibilidade e a recuperação de quedas, também são benefícios adquiridos quando
+fala-se de balanceamento de carga. Devidamente configurado, o balanceamento é capaz de manter disponível os serviços, 
+mesmo que o sistema tenha sofrido falhas ao longo da execução. Os servidores que apresentam falhas são isolados, 
+busca-se outros servidores desocupados que possam assumir as requisições. Contornado o problema de disponibilidade, 
+o sistema emite alertas para que o servidor defeituoso possa ser reparado.
+
+
+Ao que compete o trabalho proposto, uma das áreas que mais utilizam o balanceamento de carga estão nas empresas que 
+possuem um elevado tráfego de informações via web. Estas operam em um nível de criticidade muito alto, o downtime em 
+que estão dispostas é o menor possível.
+
+
+A escolha de webfarm é aplicável e uma das mais indicadas para contornar um cenário de sobrecarga. Adicionando aos 
+proventos que relata-se  nesse trabalho, o balanceamento de carga representa um modo de implementação flexível. 
+Pode-se implantar em hardware, software ou ambos. Em hardware, pode-se encontrar técnicas que agregam múltiplos 
+links para que atuem em um único link lógico.
+
+
+Com conxeões SSL, é possível no final do processo atuar em transições de tráfego entre formulários criptografados e 
+não criptografados.Tem-se como opção de balanceamento de carga que utiliza
+o hardware, um mecanismo de traduzir endereços NAT - Network Address Translation . Esse mecanismo recebe um link de 
+endereço notável e redistribui para um conjunto de computadores que possuem endereço denominados locais.
+
+
+Avançando em recursos que lidam com o hardware, existe ocasiões que viabiliza o uso de roteamento direto. Esse artifício
+permite a interação direta de servidor e usuário solicitante, excluindo a necessidade dos pacotes de saída passarem por
+roteadores, cabendo apenas aos roteadores o processamento de pacotes de entrada.
+
+
+Quando necessita-se conhecer sobre balanceamento de carga por software, servidores DNS - domain name server, possibilitam
+a instalação de um equilibrador de carga. Entende-se por carga de trabalho do DNS, os pedidos de resoluções de nomes que 
+são distribuídos para um determinado destino, esses pedidos são compartilhados por dois ou mais servidores de nomes.
+
+
+Discutindo-se sobre a ferramentas apresentadas, tem se ainda a escolha de adotar modelos híbridos que lidam com ambas
+soluções. Contudo, a gama de instrumentos que são ofertados,  demonstra o grau de aplicabilidade do balanceamento de 
+carga, respondendo com eficiência as exigências dos seus utilizadores. 
+
