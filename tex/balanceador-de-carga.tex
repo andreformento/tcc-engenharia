@@ -1,10 +1,27 @@
 \chapter{Balanceador de carga}
 
-
-A necessidade constante de mais disponibilidade em serviços, impulsionou a criação de uma técnica computacional 
-que consegue atender uma exigência cada vez mais comum e em muitos casos indispensável. Quando o balanceamento 
-de carga foi implementado, esperava-se sanar um problema que causava uma série de inconsistências. A técnica pode
-ser usada em vários componentes. Ao exemplo do balanceamento de armazenamento (storage), que possibilita o 
+A necessidade constante de mais disponibilidade em serviços, impulsionou a criação de uma técnica computacional que consegue
+atender uma exigência cada vez mais comum e em muitos casos indispensável. Quando o balanceamento de carga foi implementado,
+esperava-se sanar um problema que causava uma série de inconsistências. A adoção era para oferecer cada vez mais mobilidade
+aos seus usuários e clientes. O número de funcionários que atuam fora do escritório aumentava exponencialmente. Estes também
+acessavam os sistemas da empresa de diferentes dispositivos, mudanças de comportamento que exigia um alto grau de tráfego na
+rede, além de algoritmos inteligentes que garantam o acesso se perder o desempenho.
+O surgimento do problema foi identificado no começo da Internet comercial, quando fora descoberto em análises de planos de
+extensão que os mainframes utilizados não eram compatíveis com aplicações web, o que se tinha na época era no máximo um
+hardware padrão limitado. O agravante era que o utilizadores de TI não tinham ideia da quantidade de erros que acorreria 
+caso disponibilizasse algum serviço para o público, tendo como estrutura um único servidor.
+A principio o problema foi contornado com a utilização do DNS (Round Robin), tecnologia existente no período e que conseguia
+atingir metas de disponibilidade e escalabilidade. Tal feito foi alcançado porque o DNS traduz os nomes compreensíveis em
+endereço IP, ele também fornece um modo que consegue responder cada pedido de resolução de nome com múltiplos IP’s e em 
+ordem diferente. Em resumo, no DNS-Round Robin a medida que as requisições chegam, elas são respondidas com um dos endereços
+IP, depois ele reordena uma lista de endereços, isso faz com que nas próximas requisições um endereço IP não utilizado 
+seja o primeiro a ser acessado, proporcionando uma distribuição de requisições.
+O DNS conseguia resolver problemas , mais não melhorou por muito tempo o disponibilidade, ele não tinha capacidade de
+monitorar o hardware, logo se o equipamento apresentasse falhas nos componentes, apenas seria percebida quando o usuário
+tentasse um acesso e este não fosse respondido. Outro  ponto negativo era que o usuário costumavam armazenar em cache as
+resoluções de nome, isso implicava que uma nova solicitação sempre retornava para o mesmo servidor, esteja ele funcional 
+ou não.
+A técnica pode ser usada em vários componentes. Ao exemplo do balanceamento de armazenamento (storage), que possibilita o 
 armazenamento, e distribuição de acesso compartilhados em vários discos. Sua eficiência e a redução no custo das 
 peças possibilitaram muitos aderirem ao sistema de distribuição carga através de discos  que hoje podem ser 
 encontrados de computadores domésticos até supercomputadores. Quando fala-se em balanceamento de rede, consiste 
