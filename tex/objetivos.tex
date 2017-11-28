@@ -39,3 +39,20 @@ irão facilitar a manutenção, escalabildiade e monitoramento:
   \end{alineas}
 
 \end{alineas}
+
+Um sistema de vendas de ingressos online é abrangente e vai da parte de divulgação,
+exibição de eventos, lugares e valores disponíveis, passando pela reserva do ingresso,
+que é limitada, assim como a venda e suporte pós-venda. Um sistema completo possui essas
+e outras características. Do ponto de visto técnico, várias das abordagens discutidas
+podem ser utilizadas em muitos desses pontos. Porém, a parte prática será desenvolvida
+apenas em relação ao serviço de backend que atentererá requisições do contexto de reserva
+de ingressos.
+
+O serviço será uma aplicação que rodará de forma facilitada em um ambiente Linux através
+de uma imagem Docker e poderá ser replicada com Kubernetes. Todas as essas ferramentas
+serão abordadas, assim como, técnicas de programação voltadas a seriços de alto
+desempenho. A aplicação terá uma API REST que responderá requisições HTTP.
+
+A sugestão é que essa infraestrutura inteira rode em alguma plataforma em nuvem para
+que se obtenham os recursos necessários para que seja possível obter alta escalabilidade,
+performance e disponibilidade necessária no momento da alta demanda da reserva de ingressos.
