@@ -1,27 +1,53 @@
 \chapter{Objetivo}
 
-O objetivo principal é tornar viável a arquitetura de um sistema web de atender
+O objetivo principal é tornar viável a arquitetura de um sistema web para atender
 alta demanda quando solicitado. Por exemplo, no momento da abertura das vendas
 de ingressos para um determinado evento. Também é necessário que haja otimização
-do sistema quando o sistema estiver ocioso. Ou seja, reduzir a quantidade de
+do sistema quando estiver ocioso. Ou seja, reduzir a quantidade de
 recursos utilizados quando não houver grande demanda - reduzindo o custo.
 
-\section{Microserviços}
-
-A escalabildiade é a parte mais relevante desse projeto. Tornar um sistema escalável
+\section{Escalabilidade e microserviços}
+A escalabilidade é a parte mais relevante desse projeto. Tornar um sistema escalável
 é um grande desafio. Para ser possível, vários pontos da arquitetura devem ter a
 abordagem adequada. Por exemplo, a forma como o sistema é divido implica em vários
 fatores. A abordagem de microserviços evita que haja um ponto único de falha. A
 utilização do conceito de microserviços possibilitará a escalabilidade de maneira
 simplificada, rápida e de acordo com o que é visto atualmente no mercado.
 
-\section{Gerenciamento dos serviços}
+Um sistema de vendas de ingressos online é abrangente e envolve divulgação,
+exibição de eventos, lugares e valores disponíveis, reserva do ingresso -
+que é limitada, assim como a venda e suporte pós-venda. Um sistema completo possui essas
+e outras características. Do ponto de visto técnico, várias das abordagens discutidas
+podem ser utilizadas em muitos desses pontos. Porém, a parte prática será desenvolvida
+apenas em relação ao serviço de backend que atentererá requisições do contexto de reserva
+de ingressos.
+
+\section{Implementação da reserva de ingressos}
+
+A parte prática o trabalho irá tratar especificamente o contexto de reserva de ingressos.
+Este serviço de reserva de ingressos será uma forma prática para aplicação
+de serviço de alta disponibilidade. Serão abordadas técnicas de microserviços.
+Com isso, vários dos itens abordados poderão ser aplicados em outras partes de um sistema
+de venda de ingressos em formato de serviços que terão os mais diversos contextos.
+
+\section{Infraestrutura para rodar o serviço}
+
+O serviço será uma aplicação que rodará em um ambiente Linux através
+de uma imagem Docker e poderá ser replicada com Kubernetes. Todas as essas ferramentas
+serão abordadas, assim como, técnicas de programação voltadas a seriços de alto
+desempenho. A aplicação terá uma API REST que responderá requisições HTTP.
+
+A sugestão é que essa infraestrutura inteira rode em alguma plataforma em nuvem para
+que se obtenham os recursos necessários para que seja possível obter alta escalabilidade,
+performance e disponibilidade necessária no momento da alta demanda da venda de ingressos.
+
+\subsection{Ferramentas de infraestrutura}
 
 \index{alíneas}\index{subalíneas}\index{incisos}Ter vários microserviços implica em gerenciar
 vários sistemas. E isso significa que automação é fundamental para que isso funcione
 \cite{martin-fowler-microservices}.
 Para simplificar o gerenciamento dos serviços serão utilizadas algumas ferramentas que
-irão facilitar a manutenção, escalabildiade e monitoramento:
+irão facilitar a manutenção, escalabilidade e monitoramento:
 
 \begin{alineas}
 
@@ -34,25 +60,30 @@ irão facilitar a manutenção, escalabildiade e monitoramento:
   \item Kubernetes
 
   \begin{alineas}
-     \item Para proporcionar escalabildiade horizontal de maneira automatizada através de métricas
+     \item Para proporcionar escalabilidade horizontal de maneira automatizada através de métricas
            - como alto uso de CPU \cite{kubernetes-horizontal-pod-autoscaling}
   \end{alineas}
 
 \end{alineas}
 
-Um sistema de vendas de ingressos online é abrangente e vai da parte de divulgação,
-exibição de eventos, lugares e valores disponíveis, passando pela reserva do ingresso,
-que é limitada, assim como a venda e suporte pós-venda. Um sistema completo possui essas
-e outras características. Do ponto de visto técnico, várias das abordagens discutidas
-podem ser utilizadas em muitos desses pontos. Porém, a parte prática será desenvolvida
-apenas em relação ao serviço de backend que atentererá requisições do contexto de reserva
-de ingressos.
+\section{Organização}
 
-O serviço será uma aplicação que rodará de forma facilitada em um ambiente Linux através
-de uma imagem Docker e poderá ser replicada com Kubernetes. Todas as essas ferramentas
-serão abordadas, assim como, técnicas de programação voltadas a seriços de alto
-desempenho. A aplicação terá uma API REST que responderá requisições HTTP.
+O trabalho é divido em 4 partes:
 
-A sugestão é que essa infraestrutura inteira rode em alguma plataforma em nuvem para
-que se obtenham os recursos necessários para que seja possível obter alta escalabilidade,
-performance e disponibilidade necessária no momento da alta demanda da reserva de ingressos.
+\begin{itemize}
+    \item \autoref{introducao} Introdução: nesta primeira parte é introduzido o que
+          será tratado no trabalho, explicando o problema e deixando claros os
+          objetivos que deverão ser atendidos ao final;
+
+    \item \autoref{conceitos} Conceitos: nesta parte são discutidos os fundamentos e
+          argumentos para as tomadas de decisões de quais serão as melhores
+          abordagens para resolver o problema;
+
+    \item \autoref{implementacao} Implementação: nesta parte são explicadas as
+          implementações do código fonte do serviço de reserva de ingressos, assim
+          como, de como foi implementada e implantada a infraestrutura;
+
+    \item \autoref{resultados} Resultados: nesta parte são exibidos os resultados
+          práticos da implementação e conclusão das escolhas tomadas.
+
+\end{itemize}
