@@ -14,10 +14,15 @@ as aplicações, ou seja, quando um único servidor não comporta toda carga ger
 outro servidor e balancear a aplicação entre eles.
 
 
-Utilizando-se do balanceamento de carga o trabalho propõem tratar um problema que está relacionado com a exponencial
-quantidade de requisições recebidas pelos servidores que hospedam sites de vendas de ingresso. O agravante está no
-desconhecimento dos utilizadores de TI sobre quantidade de erros que acorre caso disponibilizem algum serviço para o
-público, tendo uma estrutura insuficiente para atender altos picos de acessos.
+Utilizando-se do balanceamento de carga, o trabalho propõem tratar um problema que está relacionado com a exponencial
+quantidade de requisições recebidas pelos servidores que hospedam sites de vendas de ingresso. A sobrecarga de um
+sistema pode ocorrer de maneira linear - com o passar dos anos, por exemplo; ou ainda, exponencial - algum pico de uso
+que pode ocorrer com o rápido aumento de requisições em questão de minutos.
+No caso do problema da reserva de ingressos, esses picos podem ocorrer regularmente a cada abertura da venda de ingressos.
+Com estes pico, cada vez que houver aumento de processamento das requisições e os servidores passarem a entrarem em
+estado de sobrecarga, mais servidores podem ser disponibilizados para atenderem a alta demanda e o balanceador de carga
+ficaria responsável por distribuir a carga para esses novos servidores também, tornando assim a estrutura escalável
+horizontalmente.
 
 O problema poderia demandar uma série de outros problemas para o provedor, isso porque este perderia uma quantidade muita
 alta de clientes, muitos desistiriam ou iriam adquirir o produto de outra forma. A confiabilidade da empresa web seria
