@@ -1,87 +1,45 @@
 \chapter{Balanceador de carga}
 
-A necessidade constante de mais disponibilidade em serviços, impulsionou a criação de uma técnica computacional que consegue
-atender uma exigência cada vez mais comum e em muitos casos indispensável. Quando o balanceamento de carga foi implementado,
-esperava-se sanar um problema que causava uma série de inconsistências. A adoção era para oferecer cada vez mais mobilidade
-aos seus usuários e clientes. O número de funcionários que atuam fora do escritório aumentava exponencialmente. Estes também
-acessavam os sistemas da empresa de diferentes dispositivos, mudanças de comportamento que exigia um alto grau de tráfego na
-rede, além de algoritmos inteligentes que garantam o acesso se perder o desempenho.
-O surgimento do problema foi identificado no começo da Internet comercial, quando fora descoberto em análises de planos de
-extensão que os mainframes utilizados não eram compatíveis com aplicações web, o que se tinha na época era no máximo um
-hardware padrão limitado. O agravante era que o utilizadores de TI não tinham ideia da quantidade de erros que acorreria 
-caso disponibilizasse algum serviço para o público, tendo como estrutura um único servidor.
-A principio o problema foi contornado com a utilização do DNS (Round Robin), tecnologia existente no período e que conseguia
-atingir metas de disponibilidade e escalabilidade. Tal feito foi alcançado porque o DNS traduz os nomes compreensíveis em
-endereço IP, ele também fornece um modo que consegue responder cada pedido de resolução de nome com múltiplos IP’s e em 
-ordem diferente. Em resumo, no DNS-Round Robin a medida que as requisições chegam, elas são respondidas com um dos endereços
-IP, depois ele reordena uma lista de endereços, isso faz com que nas próximas requisições um endereço IP não utilizado 
-seja o primeiro a ser acessado, proporcionando uma distribuição de requisições.
-O DNS conseguia resolver problemas , mais não melhorou por muito tempo o disponibilidade, ele não tinha capacidade de
-monitorar o hardware, logo se o equipamento apresentasse falhas nos componentes, apenas seria percebida quando o usuário
-tentasse um acesso e este não fosse respondido. Outro  ponto negativo era que o usuário costumavam armazenar em cache as
-resoluções de nome, isso implicava que uma nova solicitação sempre retornava para o mesmo servidor, esteja ele funcional 
-ou não.
-A técnica pode ser usada em vários componentes. Ao exemplo do balanceamento de armazenamento (storage), que possibilita o 
-armazenamento, e distribuição de acesso compartilhados em vários discos. Sua eficiência e a redução no custo das 
-peças possibilitaram muitos aderirem ao sistema de distribuição carga através de discos  que hoje podem ser 
-encontrados de computadores domésticos até supercomputadores. Quando fala-se em balanceamento de rede, consiste 
-na técnica de distribuição de tráfego de rede entre servidores.
+Balanceamento de carga é uma técnica que tem por objetivo a distribuição de carga de trabalho uniformemente entre dois ou 
+mais computadores. Essa técnica também pode ser utilizada em enlaces de redes e discos rígidos. O mecanismo visa atingir
+escalabilidade do sistema e propiciar alta disponibilidade de acesso e respostas de requisições, ou seja, a medida que a
+demanda pelos serviços, recursos ou o número de usuários conectados aumentam, mais máquinas são acionadas para incorporar
+o conjunto e auxiliar no processamento dos dados.
 
 
-Encontrado em todas as camadas do modelo OSI, essa solução visa entregar caminhos alternativos a fim de descongestionar
-os acessos atendendo um número maior de requisições. O balanceamento de CPU é construido com o intuito de equilibrar o
-processamento de dados através do compartimento computacional. Usado em sistemas de processamento distribuído e 
-organizado de tal forma que atende os mais altos índices de solicitações de processamento de informações. Os 
-balanceadores que fora apresentados são normalmente encontrados em grandes centros de processamento. Organizações 
-que atuam provendo conteúdo na rede mundial de computadores, centros de pesquisas, instituições de ensino e no âmbito
-governamental.
+O balanceamento de rede, consiste na técnica de distribuição de tráfego de rede entre servidores. Essa solução visa entregar
+caminhos alternativos a fim de descongestionar os acessos atendendo um número maior de requisições. A segunda geração dos
+balanceadores de carga são seguidos pelos sistemas proprietários baseados em aplicativos. Se comportam de forma transparente
+as aplicações, ou seja, quando um único servidor não comporta toda carga gerada, é possível iniciar uma nova instância em 
+outro servidor e balancear a aplicação entre eles.
 
 
-A alta escalabilidade está intrinsecamente ligada ao balanceamento de carga que está implementado, isso porque a medida 
-que a aplicação alocada expande-se ao ponto de um servidor não conseguir atender a demanda de processamento adequadamente,
-este necessita escalar processamento para outros servidores. O balanceamento é um recurso utilizado para que a alta
-disponibilidade tenha eficácia e mantenha serviços ativos. Uma vez escalado o processamento, este pode apresentar lentidão
-e baixo desempenho, um dos problemas que pode-se identificar com esse comportamento é a infraestrutura instalada. 
-O alto desempenho é obtido se o balanceamento de carga dividir as tarefas dos serviços de forma inteligentes, ou seja, 
-que consiga direcionar as novas requisições aos servidores mais ociosos, com um gerenciamento deficiente cria-se gargalos
-na aplicação e ônus aos equipamentos.
+Utilizando-se do balanceamento de carga o trabalho propõem tratar um problema que está relacionado com a exponencial
+quantidade de requisições recebidas pelos servidores que hospedam sites de vendas de ingresso. O agravante está no
+desconhecimento dos utilizadores de TI sobre quantidade de erros que acorre caso disponibilizem algum serviço para o 
+público, tendo uma estrutura insuficiente para atender altos picos de acessos.
 
 
-Juntamente aos já mencionados, a alta disponibilidade e a recuperação de quedas, também são benefícios adquiridos quando
-fala-se de balanceamento de carga. Devidamente configurado, o balanceamento é capaz de manter disponível os serviços, 
-mesmo que o sistema tenha sofrido falhas ao longo da execução. Os servidores que apresentam falhas são isolados, 
-busca-se outros servidores desocupados que possam assumir as requisições. Contornado o problema de disponibilidade, 
-o sistema emite alertas para que o servidor defeituoso possa ser reparado.
+O problema poderia demandar uma série de outros problemas para o provedor, isso porque este perderia uma quantidade muita
+alta de clientes, muitos desistiriam ou iriam adquirir o produto de outra forma. A confiabilidade da empresa web seria
+abalada negativamente, pois diante da frustração, os usuários poderiam passar uma imagem inadequada e que implicaria a perda
+de possíveis novos clientes. Consumidores de produtos que compram pela internet, possuem um comportamento que difere em
+alguns casos dos compradores de lojas físicas. Eles estão acostumados com um atendimento simples, rápido e sem burocracia.
+Quando desejam adquirir algo, seus possíveis vendedores devem oferecer uma experiência que abrange tudo que ele irá
+necessitar para comprar o produto, alguma inatividade no site pode significar a perda de uma venda.
 
 
-Ao que compete o trabalho proposto, uma das áreas que mais utilizam o balanceamento de carga estão nas empresas que 
-possuem um elevado tráfego de informações via web. Estas operam em um nível de criticidade muito alto, o downtime em 
-que estão dispostas é o menor possível.
+Ao que compete a empresa contratante, o provedor do serviço, também sofreria e sua imagem como empresa confiável seria
+duramente criticada. A razão pelo efeito dominó está que a única forma de colocar os produtos acessíveis ao público é de
+forma virtual. Inconsistências no acesso dos clientes podem ser comparados as portas fechadas de uma loja física.
 
 
-A escolha de webfarm é aplicável e uma das mais indicadas para contornar um cenário de sobrecarga. Adicionando aos 
-proventos que relata-se  nesse trabalho, o balanceamento de carga representa um modo de implementação flexível. 
-Pode-se implantar em hardware, software ou ambos. Em hardware, pode-se encontrar técnicas que agregam múltiplos 
-links para que atuem em um único link lógico.
-
-
-Com conxeões SSL, é possível no final do processo atuar em transições de tráfego entre formulários criptografados e 
-não criptografados.Tem-se como opção de balanceamento de carga que utiliza
-o hardware, um mecanismo de traduzir endereços NAT - Network Address Translation . Esse mecanismo recebe um link de 
-endereço notável e redistribui para um conjunto de computadores que possuem endereço denominados locais.
-
-
-Avançando em recursos que lidam com o hardware, existe ocasiões que viabiliza o uso de roteamento direto. Esse artifício
-permite a interação direta de servidor e usuário solicitante, excluindo a necessidade dos pacotes de saída passarem por
-roteadores, cabendo apenas aos roteadores o processamento de pacotes de entrada.
-
-
-Quando necessita-se conhecer sobre balanceamento de carga por software, servidores DNS - domain name server, possibilitam
-a instalação de um equilibrador de carga. Entende-se por carga de trabalho do DNS, os pedidos de resoluções de nomes que 
-são distribuídos para um determinado destino, esses pedidos são compartilhados por dois ou mais servidores de nomes.
-
-
-Discutindo-se sobre a ferramentas apresentadas, tem se ainda a escolha de adotar modelos híbridos que lidam com ambas
-soluções. Contudo, a gama de instrumentos que são ofertados,  demonstra o grau de aplicabilidade do balanceamento de 
-carga, respondendo com eficiência as exigências dos seus utilizadores. 
+Sugere-se como uma solução que atende as exigências citadas a utilização de balanceamento de carga baseado em hardware.
+Essa tecnologia tem por base dispositivos de rede. Esses diapositivos são neutros em relação aos aplicativos, dessa forma
+consegue-se atuar em qualquer plataforma. Em resumo, os componentes oferecem um “servidor virtual” para todos os serviços
+que requerem acesso, quando o servidor aceita a requisição, encaminha a mesma para o “servidor real” disponível para atender
+e processar os dados. Suas vantagens frente aos demais, é o controle dos servidores, sua disponibilidade, atividade e
+operação, monitorado do estado do hardware, isso garante que o sistema irá responder todas as requisições sem perder
+desempenho. Com esse gerenciamento também é possível detectar quando os servidores recebem baixo número de acessos, nesse
+estado algumas máquinas são desativadas temporariamente, visando economia de energia e preservação dos equipamentos.  
 
