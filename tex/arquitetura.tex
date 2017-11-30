@@ -1,22 +1,66 @@
-\chapter{@Arquitetura}\label{arquitetura}
+\chapter{Arquitetura}\label{arquitetura}
 
-@Explicação da arquitetura do projeto
+Na figura ~\ref{fluxo-de-reserva-de-ingressos-da-aplicacao}
+é exibido o fluxo de como ocorre o consumo do serviço de reserva de ingresso.
 
-% https://www.sharelatex.com/blog/2013/08/29/tikz-series-pt3.html
 \begin{figure}[!htp]
-    \centering
-    \begin{tikzpicture}[node distance=2cm,on grid,auto]
+  \centering
+  \scalebox{1}{
+    \begin{sequencediagram}
+        \newthread{cliente}{\shortstack{Cliente \\ \\ \\
+          \begin{tikzpicture}
+            \node [copy shadow,fill=gray!20,draw=black,thick ,align=center] {Mobile \\ Web site \\ etc};
+          \end{tikzpicture}}
+        }{}
+        \newinst[1]{api-gateway}{\shortstack{API \\ Gateway \\ \\
+          \begin{tikzpicture}
+            \node [copy shadow,fill=gray!20,draw=black,thick ,align=center] {Balanceador \\ de cargas};
+          \end{tikzpicture}}
+        }{}
+        \newinst[1]{servico-de-reservas}{\shortstack{Serviço de reservas \\ \\
+          \begin{tikzpicture}
+            \node [copy shadow,fill=gray!20,draw=black,thick ,align=center] {Aplicação Java};
+          \end{tikzpicture}
+        }}{}
+        \newinst[1]{banco-de-dados}{\shortstack{Banco de dados \\ \\
+          \begin{tikzpicture}[shape aspect=.5]
+            \tikzset{every node/.style={cylinder, shape border rotate=90, draw,fill=gray!25}}
+            \node at (1.5,0) {Redis};
+          \end{tikzpicture}
+        }}{}
 
-    \node (inicio) [startstop] {Início};
-    \node (proc1) [process, below of=inicio] {Processo 1};
-    \node (fim) [startstop, below of=proc1] {Fim};
-
-    \draw [arrow] (inicio) -- (proc1);
-    \draw [arrow] (proc1) -- (fim);
-
-    \end{tikzpicture}
-    \caption{Arquitetura da aplicação}
-    \label{arquitetura-da-aplicação}
+        \begin{call}{cliente}{}{api-gateway}{}
+          \begin{call}{api-gateway}{}{servico-de-reservas}{}
+            \begin{call}{servico-de-reservas}{}{banco-de-dados}{} \end{call}
+          \end{call}
+        \end{call}
+    \end{sequencediagram}
+  }
+  \caption{Fluxo de reserva de ingressos da aplicação}
+  \label{fluxo-de-reserva-de-ingressos-da-aplicacao}
 \end{figure}
 
-Conforme a arquitetura da aplicaçao~\ref{arquitetura-da-aplicação}...
+
+
+
+No contexto da aplicação, cliente web é definido como qualquer consumidor
+de API REST (\autoref{rest}) que utilize os dados de um serviço.
+O cliente web pode ser um site web, um aplicativo mobile ou até mesmo um serviço
+externo que se integra ao sistema de venda de ingressos.
+
+O cliente web conhecerá apenas o endereço do API Gateway (\autoref{api-gateway})
+que será responsável por fazer o balanceamento de cargas
+(\autoref{balanceador-de-carga}) do serviço de reserva de ingressos.
+Toda a regra de negócios refente a reserva de ingressos é executada no
+serviço correspondente. Este responde ao API Gateway que retorna o
+resultado ao cliente.
+
+Fica abstraído como o cliente é exibido ao usuário
+final, possibilitando assim que vários tipos diferentes de clientes implementem
+a sua forma de exibição e a própria experiência de visualização para o usuário.
+Ou seja, a arquitetura proporciona a clara divisão entre backend
+(servidores da aplicação) com frontend (site web, mobile, etc).
+
+Desta arquitetura proposta, a parte prática do trabalho ocorreu apenas na
+implementação do serviço de reserva de ingressos (\autoref{implementacao-do-servico}),
+deixando o restante apenas como trabalhos futuros (\autoref{trabalhos-futuros}).
