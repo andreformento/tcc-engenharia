@@ -14,8 +14,8 @@ deploy:
   api_key: $GITHUB_TOKEN
   file:
     - "monografia.pdf"
-    - "monografia.doc"
-    - "monografia.docx"
+#    - "monografia.doc"
+#    - "monografia.docx"
   skip_cleanup: true
   overwrite: true
   on:
