@@ -1,5 +1,18 @@
 \chapter{Microserviços}
 
+Como expressado por
+\cite{building-microservices}, ``Microserviços são pequenos serviços
+autônomos que trabalham em conjunto``.
+
+\begin{citacao}
+Em suma, o estilo arquitetônico do microserviço é uma abordagem para desenvolver
+uma única aplicação como um conjunto de pequenos serviços, cada um executando em seu próprio processo e se comunicando
+com mecanismos leves, muitas vezes uma API de recursos HTTP. Esses serviços são construídos em torno de recursos de
+negócios e implementáveis independentemente por meio de maquinaria de implantação totalmente automatizada.
+Existe um mínimo de gerenciamento centralizado desses serviços, que pode ser escrito em diferentes linguagens de
+programação e usar diferentes tecnologias de armazenamento de dados \cite{martin-fowler-microservices}.
+\end{citacao}
+
 Com microserviços é possível escalar apenas algumas partes do sistema, diminuindo
 o custo e esforço para aumentar o poder de processamento para atender muitas requisições.
 
@@ -37,18 +50,13 @@ simples. \cite{arquitetura-de-microservicos-ou-monolitica}.
 \end{citacao}
 
 
-O termo que se usa para identificar esse modelo de arquitetura adequa-se bem a proposta.
-Como expressado por
-\cite{building-microservices}, ``Microserviços são pequenos serviços autônomos que trabalham em conjunto``.
-Outra definição de microserviços é descrita abaixo
-\begin{citacao}
-Em suma, o estilo arquitetônico do microserviço é uma abordagem para desenvolver
-uma única aplicação como um conjunto de pequenos serviços, cada um executando em seu próprio processo e se comunicando
-com mecanismos leves, muitas vezes uma API de recursos HTTP. Esses serviços são construídos em torno de recursos de
-negócios e implementáveis independentemente por meio de maquinaria de implantação totalmente automatizada.
-Existe um mínimo de gerenciamento centralizado desses serviços, que pode ser escrito em diferentes linguagens de
-programação e usar diferentes tecnologias de armazenamento de dados \cite{martin-fowler-microservices}.
-\end{citacao}
+Considerando que a reserva de ingressos é um contexto bem definido, pode haver um serviço que cuide
+especificamente desta parte. Desta forma, é possível isolar e pensar de forma objetiva em como
+lidar com esse problema.
+
+
+
+\section{@@com podemos encaixar a parte abaixo no contexto de microserviços?}
 
 Com o aumento exponencial na quantidade de aplicações que são desenvolvidas, atrelado a isso tem-se as milhares de base
 de código existentes. Essas bases aumentam tanto de tamanho como de complexidade. Essas características dificultam a
