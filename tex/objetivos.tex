@@ -8,10 +8,12 @@ Ou seja, reduzir a quantidade de recursos utilizados quando não houver
 grande demanda - reduzindo o custo.
 
 \section{Escalabilidade e microserviços}
-A escalabilidade é a parte mais relevante desse projeto. Tornar um sistema escalável
-é um grande desafio. Para ser possível, vários pontos da arquitetura devem ter a
+A escalabilidade (\autoref{escalabilidade}) é a parte mais relevante desse projeto.
+Tornar um sistema escalável é um grande desafio.
+Para ser possível, vários pontos da arquitetura devem ter a
 abordagem adequada. Por exemplo, a forma como o sistema é divido implica em vários
-fatores. A abordagem de microserviços evita que haja um ponto único de falha. A
+fatores.
+A abordagem de microserviços (\autoref{microservicos}) evita que haja um ponto único de falha. A
 utilização do conceito de microserviços possibilitará a escalabilidade de maneira
 simplificada, rápida e de acordo com o que é visto atualmente no mercado.
 
@@ -26,21 +28,26 @@ de ingressos.
 \section{Implementação da reserva de ingressos}
 
 A parte prática o trabalho irá tratar especificamente o contexto de reserva de ingressos.
-Este serviço de reserva de ingressos será uma forma prática para aplicação
-de serviço de alta disponibilidade. Serão abordadas técnicas de microserviços.
+Há a implementação do serviço de reserva de ingressos será uma forma prática para aplicação
+de serviço de alta disponibilidade e o código é discutido em detalhes
+(\autoref{implementacao-do-servico}). Serão abordadas técnicas de microserviços.
 Com isso, vários dos itens abordados poderão ser aplicados em outras partes de um sistema
 de venda de ingressos em formato de serviços que terão os mais diversos contextos.
+A aplicação terá uma API REST (\autoref{api}) que responderá requisições HTTP.
 
 \section{Infraestrutura para rodar o serviço}
 
 O serviço será uma aplicação que rodará em um ambiente Linux através
-de uma imagem Docker e poderá ser replicada com Kubernetes. Todas as essas ferramentas
+de uma imagem Docker (\autoref{docker})
+e poderá ser replicada com Kubernetes (\autoref{kubernetes}).
+Todas as essas ferramentas
 serão abordadas, assim como, técnicas de programação voltadas a seriços de alto
-desempenho. A aplicação terá uma API REST que responderá requisições HTTP.
+desempenho.
 
-A sugestão é que essa infraestrutura inteira rode em alguma plataforma em nuvem para
-que se obtenham os recursos necessários para que seja possível obter alta escalabilidade,
-performance e disponibilidade necessária no momento da alta demanda da venda de ingressos.
+A sugestão é que essa infraestrutura inteira rode em alguma plataforma em nuvem
+(\autoref{infraestrutura-em-nuvem}) para que se obtenham os recursos necessários para que
+seja possível obter a escalabilidade necessária no momento da alta demanda da
+venda de ingressos.
 
 \subsection{Ferramentas de infraestrutura}
 
