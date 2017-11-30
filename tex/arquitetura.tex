@@ -1,0 +1,22 @@
+\chapter{@Arquitetura}\label{arquitetura}
+
+@Explicação da arquitetura do projeto
+
+% https://www.sharelatex.com/blog/2013/08/29/tikz-series-pt3.html
+\begin{figure}[!htp]
+    \centering
+    \begin{tikzpicture}[node distance=2cm,on grid,auto]
+
+    \node (inicio) [startstop] {Início};
+    \node (proc1) [process, below of=inicio] {Processo 1};
+    \node (fim) [startstop, below of=proc1] {Fim};
+
+    \draw [arrow] (inicio) -- (proc1);
+    \draw [arrow] (proc1) -- (fim);
+
+    \end{tikzpicture}
+    \caption{Arquitetura da aplicação}
+    \label{arquitetura-da-aplicação}
+\end{figure}
+
+Conforme a arquitetura da aplicaçao~\ref{arquitetura-da-aplicação}...
