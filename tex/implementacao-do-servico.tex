@@ -1,22 +1,33 @@
 \chapter{@@Implementação do serviço}
 
-\section{@@arrumar essa parte do código fonte}
-[nao é pra comecar falando de testes. primeiro explicar o que foi implementado,
-ferramentas, o que é esse serviço e por fim mencionar testes, ou nao]
+% \section{@@arrumar essa parte do código fonte}
+% [nao é pra comecar falando de testes. primeiro explicar o que foi implementado,
+% ferramentas, o que é esse serviço e por fim mencionar testes, ou nao]
 
-Para realizar testes de uma situação real referente às teorias citadas, foi
-criado um serviço que registra reservas de ingressos. O serviço possui código
-fonte open-source e pode ser acessado em
+A parte prática do trabalho implementa o serviço de reserva de ingressos.
+Para reservar um ingresso é necessário que haja a informação de quantos ingressos
+estão disponíveis em um determinado evento. Por questão de escopo do trabalho,
+foram ignorados detalhes como
+tipo de ingresso por setor, para estudantes, idosos e qualquer outra especificidade
+de negócio. Mas, isso seria resolvido com pequenas alterações na aplicação
+e não impacta na solução desenvolvida.
+
+O serviço possui código fonte open-source e pode ser acessado em
 \url{https://github.com/andreformento/term-paper}.
 
 \section{Código fonte}
+
 Este serviço é uma aplicação escrita na linguagem Java na versão 8. O paradigma
 da implementação do código fonte foi Orientação à Objetos. Porém, possui alguns
 princípios de programação funcional - como é o caso da técnica de imutabilidade.
 
+Detalhes de requisitos (\autoref{requisitos-da-aplicacao}) e a
+forma como rodar o programa (\autoref{como-rodar-a-aplicacao}) serão detalhadas
+na parte de implementação da infraestrutura (\autoref{implementação-da-infraestrutura}).
+
 \index{alíneas}\index{subalíneas}\index{incisos}Conforme
 \cite{does-immutability-really-mean-thread-safety} e \cite{java-doc-immutable-objects},
-essa técnica de imutabilidade traz vários benefícios:
+a técnica de imutabilidade traz vários benefícios:
 
 \begin{alineas}
 
