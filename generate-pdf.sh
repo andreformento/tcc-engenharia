@@ -18,10 +18,10 @@ docker run --rm -it -v "$PWD":/data -w /data andreformento/latex makeindex monog
 docker run --rm -it -v "$PWD":/data -w /data andreformento/latex pdflatex -synctex=1 -interaction=nonstopmode monografia.tex
 docker run --rm -it -v "$PWD":/data -w /data andreformento/latex pdflatex -synctex=1 -interaction=nonstopmode monografia.tex
 
-# docker run --rm -it -v "$PWD":/data -w /data andreformento/latex pandoc -t docx -f latex -o monografia.docx monografia.tex
+docker run --rm -it -v "$PWD":/data -w /data andreformento/latex pandoc -t docx -f latex -o monografia.docx monografia.tex
 
 mv monografia.pdf ../
-#mv monografia.docx ../
+mv monografia.docx ../
 
 cd ..
 ./clear.sh
