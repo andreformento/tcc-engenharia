@@ -1,4 +1,4 @@
-\chapter{@Implementação da infraestrutura}\label{implementação-da-infraestrutura}
+\chapter{Implementação da infraestrutura}\label{implementação-da-infraestrutura}
 
 \section{Ferramentas}\label{ferramentas}
 
@@ -12,25 +12,65 @@ digital desenvolvido.
 
 \subsection{@Docker}\label{docker}
 
+Escrever sobre Docker
 \url{http://www.diego-garcia.info/2015/02/15/docker-por-onde-comecar/}
 
 \url{https://www.mundodocker.com.br}
 
 \subsection{@Kubernetes}\label{kubernetes}
 
+Escrever sobre Kubernetes
 \url{https://www.concrete.com.br/2017/06/26/docker-kubernetes-e-openshift/}
 
 \url{https://dzone.com/articles/microservices-with-kubernetes-and-docker}
 
 
 
-\section{@Requisitos da aplicação}\label{requisitos-da-aplicacao}
+\section{Requisitos da aplicação}\label{requisitos-da-aplicacao}
+
+Todas as operações mencionadas consideram que o Sistema Operacional é Linux
+- que apesar de não ser obrigatório, é recomendado.
+Para gerenciamento do código fonte é utilizado o Git no servidor do Github.
+Para compilar e rodar a aplicação é necessário ter instalado o Java 8.
+Para gerenciamento de pacotes do Java é utilizado o Gradle 4, mas não
+é obrigatório que ele esteja instalado - pois é feito o download, caso
+ele não exista. Para subir a aplicação é necessário ter o Docker e o
+Kubernetes (kubectl e minikube) instalados.
 
 % git, java, gradle, docker, kubernetes
 
-\section{@Como rodar a aplicação}\label{como-rodar-a-aplicacao}
+\section{Como rodar a aplicação}\label{como-rodar-a-aplicacao}
 
+Para fazer o download do código fonte é necessário utilizar a ferramenta Git
+e executar no terminal do Linux o seguinte mostrado no \autoref{comando-git}.
 
+\lstset{language=bash,keywordstyle={\bfseries \color{black}}}
+
+\begin{lstlisting}[language=bash,label=comando-git,caption=Como fazer o download do código fonte com o Git]
+git clone https://github.com/andreformento/term-paper.git
+\end{lstlisting}
+
+Para construir a aplicação é necessário executar o comando
+\autoref{construir-aplicacao}.
+
+\begin{lstlisting}[language=bash,label=construir-aplicacao,caption=Como construir a aplicação]
+cd term-paper
+./build.sh
+\end{lstlisting}
+
+Para rodar a aplicação é necessário executar o comando
+\autoref{rodar-aplicacao}.
+
+\begin{lstlisting}[language=bash,label=rodar-aplicacao,caption=Como rodar a aplicação]
+./start.sh
+\end{lstlisting}
+
+Para testar a performance da aplicação é necessário executar o comando
+\autoref{testar-performance-aplicacao}.
+
+\begin{lstlisting}[language=bash,label=testar-performance-aplicacao,caption=Como testar a performance da aplicação]
+./test-report.sh
+\end{lstlisting}
 
 
 
