@@ -40,9 +40,6 @@ Na figura ~\ref{fluxo-de-reserva-de-ingressos-da-aplicacao}
   \label{fluxo-de-reserva-de-ingressos-da-aplicacao}
 \end{figure}
 
-
-
-
 No contexto da aplicação, cliente web é definido como qualquer consumidor
 de API REST (\autoref{rest}) que utilize os dados de um serviço.
 O cliente web pode ser um site web, um aplicativo mobile ou até mesmo um serviço
@@ -52,8 +49,8 @@ O cliente web conhecerá apenas o endereço do API Gateway (\autoref{api-gateway
 que será responsável por fazer o balanceamento de cargas
 (\autoref{balanceador-de-carga}) do serviço de reserva de ingressos.
 Toda a regra de negócios refente a reserva de ingressos é executada no
-serviço correspondente. Este responde ao API Gateway que retorna o
-resultado ao cliente.
+serviço correspondente que possui um banco de dados (\autoref{banco-de-dados}).
+Este responde ao API Gateway que retorna o resultado ao cliente.
 
 Fica abstraído como o cliente é exibido ao usuário
 final, possibilitando assim que vários tipos diferentes de clientes implementem
