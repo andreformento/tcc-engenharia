@@ -45,7 +45,7 @@ de logística já dá baixa no estoque quando a compra é de um impresso, além 
 quando algum livro está ficando com estoque crítico. Essa característica importante para o maior
 desacoplamento dos serviços é conhecida como Smart endpoints, dumb pipes, que em uma tradução
 livre pode ser entendida como Endpoints inteligentes e fluxos
-simples. \cite{arquitetura-de-microservicos-ou-monolitica}.
+simples \cite{arquitetura-de-microservicos-ou-monolitica}.
 
 \end{citacao}
 
@@ -54,35 +54,32 @@ Considerando que a reserva de ingressos é um contexto bem definido, pode haver 
 especificamente desta parte. Desta forma, é possível isolar e pensar de forma objetiva em como
 lidar com esse problema.
 
-
-
-\section{@@com podemos encaixar a parte abaixo no contexto de microserviços?}
-
-A implementação de microseviços deve-se ao fato de resolver problemas na estrutura do sistema.Com o aumento exponencial
-na quantidade de aplicações que são desenvolvidas, tem-se milhares de base de código. Essas bases
-aumentam tanto de tamanho como de complexidade, características dificultam a equipe de desenvolvimento, ao passo que a 
-medida que o código cresce, torna-se difícil reparar ou realizar mudanças. Esse cenário torna-se mais desafiador quando 
+A implementação de microseviços deve-se ao fato de resolver problemas na estrutura do sistema. Com o aumento exponencial
+na quantidade de aplicações que são desenvolvidas, tem-se milhares de bases de códigos. Essas bases
+aumentam tanto de tamanho como de complexidade, características dificultam a equipe de desenvolvimento, ao passo que a
+medida que o código cresce, torna-se difícil reparar ou realizar mudanças. Esse cenário torna-se mais desafiador quando
 fala-se de um sistema monolítico. Para que se entenda as vantagens de usar os microserviços, pode-se comparar a arquitetura
 monolítica.
 
 
 Um programa monolítico é estruturado usando desvios condicionais ou incondicionais, não fazendo uso explicito de mecanismos
-auxiliares de programação que permitam uma melhor estruturação do controle.\cite{teoria-da-computação-3ed-ufrgs-maquinas-universais-e-computabilidade}.
+auxiliares de programação que permitam uma melhor estruturação do
+controle \cite{teoria-da-computação-3ed-ufrgs-maquinas-universais-e-computabilidade}.
 
 
 Nos microserviços a independência de sua implantação é algo tido como uma das razões para utilizá-los ao invés das
 bibliotecas. Estas são atreladas a um único processo, mesmo contendo várias bibliotecas, todas estarão atreladas ao mesmo
 processo, uma vez que se faz alterações em qualquer delas, resulta em uma implantação do aplicativo inteiro.
-As vantagens  em microserviços abrangem desde a equipe atuante no desenvolvimento, já que com nesse paradigma, elas planejam
+As vantagens em microserviços abrangem desde a equipe atuante no desenvolvimento, já que com nesse paradigma, elas planejam
 uma atuação em serviços diferentes, sem que essas mudanças afetem os demais integrantes. Adere a escalabilidade de forma
 seletiva, possibilitando escalar somente a parte do sistema que necessita de ajustes. A divisão do sistema também beneficia
-a velocidade de desenvolvimento, o código tratado é de fácil entendimento e como são soluções relativamente pequenas 
+a velocidade de desenvolvimento, o código tratado é de fácil entendimento e como são soluções relativamente pequenas
 compilam mais rápido. Práticas aceitas em um ambiente de implantação, como concluiu (Huy Hutnh, Sr. Solutions Architect of
 AWS e Magnus Bjorkman Solutions Architect of AWS).
 
 
 “A migração de um aplicativo monolítico para um conjunto de microserviços em contêiner pode parecer uma tarefa assustadora.
 Seguindo as etapas assertivamente, você pode começar a contornar aplicativos monolíticos, aproveitando o ambiente de tempo
-de execução do contêiner e iniciando o processo de reestruturação em microservices. No geral, os microservices em 
-contentores são mais rápidos de desenvolver, mais fáceis de iterar e mais económicos para manter e proteger.
-\cite{deploying-java-microservices-on-amazon-ec2-container-service}.
+de execução do contêiner e iniciando o processo de reestruturação em microservices. No geral, os microservices em
+contentores são mais rápidos de desenvolver, mais fáceis de iterar e mais económicos para manter e
+proteger \cite{deploying-java-microservices-on-amazon-ec2-container-service}.
