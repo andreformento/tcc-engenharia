@@ -124,7 +124,8 @@ public class TicketReservationController {
     private final TicketReservationService service;
     private final TicketReservationMapper mapper;
 
-    public TicketReservationController(TicketReservationService service, TicketReservationMapper mapper) {
+    public TicketReservationController(TicketReservationService service, 
+          TicketReservationMapper mapper) {
         this.service = service;
         this.mapper = mapper;
     }
@@ -133,10 +134,12 @@ public class TicketReservationController {
     @RequestMapping("/{idEvent}/tickets")
     public HttpEntity<Resource<TicketReservationResponse>> booking(
         @PathVariable("idEvent") String idEvent,
-        @RequestBody final TicketReservationRequest TicketReservationRequest
+        @RequestBody final
+             TicketReservationRequest TicketReservationRequest
     ) {
 
-        return mapper.mapToResponse(service.booking(mapper.mapFromRequest(idEvent, TicketReservationRequest)));
+        return mapper.mapToResponse(service.booking(mapper.
+            mapFromRequest(idEvent, TicketReservationRequest)));
     }
 
 }
