@@ -195,22 +195,22 @@ realizar a reserva de um lugar em um determinado evento para um usuário.
 
 \end{enumerate}
 
-\section{@Banco de dados}\label{banco-de-dados}
+\section{Banco de dados}\label{banco-de-dados}
 
 A aplicação precisa de um banco de dados que tenha resposta rápida para leitura e
 escrita para uma quantidade limitada de registros - que é a quantidade disponível
 de ingressos. Por isso, o banco de dados utilizado foi o Redis que tem o funcionamento
-em memória e possui a opção de trabalhar em cluster - possibilitando a escalabilidade.
+em memória e possui a opção de trabalhar em cluster - possibilitando a escalabilidade,
+conforme \citeonline{redis-cluster-specification}.
 
-\subsection{@3 características de um banco}
-@@Foto do diagrama das 3 características
+%\subsection{ACID}
 
-
-Um banco de dados em memória prove uma excelente taxa de leitura e escrita. (Referência).
+Um banco de dados em memória prove uma excelente taxa de leitura e escrita, conforme
+\citeonline{a-performance-evaluation-of-in-memory-databases}.
 Com isso, é possível responder com as reservas de ingressos de maneira que todas elas
 sejam disponibilizadas até que se esgotem as vagas.
 
-\subsection{@Modelagem do Redis}
+\subsection{Modelagem}
 
 Há um registro no Redis que guarda o código do evento e a quantidade de ingressos
 disponíveis. A partir daí é guardado o outro registro que possui a chave do evento
