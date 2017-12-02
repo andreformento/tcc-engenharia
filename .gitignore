@@ -283,6 +283,7 @@ sympy-plots-for-*.tex/
 _build/
 
 latex/
+.vscode/
 
 monografia.pdf
 monografia.doc
