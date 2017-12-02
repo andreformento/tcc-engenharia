@@ -22,11 +22,11 @@ Disponibilidade = \frac{MTBF}{MTBF + MTTR}
 \index{alíneas}\index{subalíneas}\index{incisos}Onde:
 
 \begin{itemize}
-	
+
 	\item MTBF: Mean Time Between Failures - tempo médio entre falhas
 
 	\item MTTR: Mean Time To Repair - tempo médio de reparação
-		
+
 \end{itemize}
 
 Um sistema que garante 99\% do tempo anualmente tolera até 3,65 dias por ano de inatividade. Números atrativos para muitas
@@ -43,28 +43,28 @@ desafios, um deles é a criticidade de acessar as informações em onde quer que
 a alta disponibilidade está é uma alternativa que atende qualquer ramo de negócio, seja ele pequeno, médio ou de grande porte.
 
 
-Com as diversas vantagens apresentadas, a alta disponibilidade tem seu preço. Os benefícios podem ser aproveitados, 
+Com as diversas vantagens apresentadas, a alta disponibilidade tem seu preço. Os benefícios podem ser aproveitados,
 porém estão atrelados pela necessidade ainda maior de um hardware robusto que consiga absorver milhões de requisições por
 segundo. Essas requisições são oriundas de todas as partes do planeta e precisam ser atendidas no menor tempo disponível.
-Constantes indisponibilidades em aplicações que são críticas, causam perdas de clientes ou tarefas e a imagem negativa que 
+Constantes indisponibilidades em aplicações que são críticas, causam perdas de clientes ou tarefas e a imagem negativa que
 é associada a empresa torna-se duradoura e difícil de apagar.
 
 
-Algumas terminologias usadas em alta disponibilidade são as mesmas que se usa em computação, com algumas mudanças. 
+Algumas terminologias usadas em alta disponibilidade são as mesmas que se usa em computação, com algumas mudanças.
 O sistema que se usa em alta disponibilidade pode ser o resultado de um conjunto de subsistemas que são capazes de executar
 funções individuais, porém sua principal utilidade é integrar e auxiliar os demais subsistemas que garantem uma operação única,
 um comportamento similar aos sistemas que se utiliza em ou pequenas ou médias empresas, mais são compostos de apenas um sistema
 que gerencia todos os componentes e demais softwares.
 
 
-O sistema operacional que atua em alta disponibilidade, é projetado para além de outras funções, monitorar o hardware, a fim 
-de tomar decisões que redirecione as requisições, caso intercepte falhas que comprometam a execução da tarefa. Esse 
+O sistema operacional que atua em alta disponibilidade, é projetado para além de outras funções, monitorar o hardware, a fim
+de tomar decisões que redirecione as requisições, caso intercepte falhas que comprometam a execução da tarefa. Esse
 monitoramento é um dos pilares que garantem e classificam um sistema altamente disponível.
 O sistema oferece aos seus utilizadores serviços. Estes são disponibilizados e executam uma série de instruções requisitadas
 pelo operador.
 
 
-Apesar de trabalhar com o intuito principal de evitá-las, esses sistemas ainda estão passiveis de falhas. Repostas não 
+Apesar de trabalhar com o intuito principal de evitá-las, esses sistemas ainda estão passiveis de falhas. Repostas não
 esperadas, interrupções físicas, eventos inesperados que podem estar no hardware e afetam o funcionamento interferindo na
 disponibilidade. Cada ocorrência que não esta dentro do que é esperado é classificada como falha. Apesar de não esperada,
 ela deve ser corrigida com o menor tempo possível. Sua origem esta relacionada com falhas humanas ou não, esses eventos
@@ -84,28 +84,28 @@ erros, maneiras que o conjunto usa para alertar o usuário que algo esta errado.
 estas permanecem nos sistemas causando latências e inatividade.
 
 
-O estado errôneo ou em erro, pode ser percebido quando se tem no processamento posterior um defeito. Este estado está 
+O estado errôneo ou em erro, pode ser percebido quando se tem no processamento posterior um defeito. Este estado está
 relacionado em um universo informacional. Decorrente de uma falha o sistema apresenta informações incoerentes ao resultado
-esperado. O comportamento não atende as exigências de um funcionamento adequado causando-se defeitos que serão observados 
+esperado. O comportamento não atende as exigências de um funcionamento adequado causando-se defeitos que serão observados
 pelo operador. Entende-se que a classificação dos estados citados são estados de falha, que abrange toda parte física, estado
-de erro o que compete ao universo informacional e o estado de defeito que está relacionado em um cenário controlado pelo 
+de erro o que compete ao universo informacional e o estado de defeito que está relacionado em um cenário controlado pelo
 usuário.
 
 
-De tal relevância no assunto, as falhas foram ao logo de tempo muito estudadas, concluiu-se que dentro do estado de falha 
+De tal relevância no assunto, as falhas foram ao logo de tempo muito estudadas, concluiu-se que dentro do estado de falha
 é possível identificar tipos diferentes desse comportamento.
-Distingue-se as falhas por duração como transientes ou permanentes. A primeira possui tempo de duração curto, suas causas 
+Distingue-se as falhas por duração como transientes ou permanentes. A primeira possui tempo de duração curto, suas causas
 estão atreladas ao mal funcionamento ou alguma interferência externa indesejada. Elas também podem ser intermitentes,
 afetando a operação em curtos porém diversos momentos distintos.
 Falhas que causam problemas de forma a não operar todo o hardware com consistência, eventos afetam de tal maneira que o
 desempenho é comprometido permanentemente, conhecidas como falhas permanentes, estas impossibilitam o sistema a funcionar
 como antes do ocorrido.
 Passível de outras falhas que competem a algum componente específico, conhece-se essas falhas como;
-De travamento, bem intuitivo esta falha representa algum travamento causado por um componente que apresenta defeito e 
+De travamento, bem intuitivo esta falha representa algum travamento causado por um componente que apresenta defeito e
 perde-se do seu estado interno normal.
 
 
-Quando um componente responde requisições que a ele foram solicitadas, de forma antecipada ou atrasada, ele está fora 
+Quando um componente responde requisições que a ele foram solicitadas, de forma antecipada ou atrasada, ele está fora
 de sincronismo com os demais, chama-se esse evento de falhas de timing ou falhas de performance.
 Falhas por omissão se dão por conta de um processo que ao entrar em colapso não conseguiu executar o próximo passo do
 programa. A não execução foi repentina, ou seja, quando foi invocado o processo ele simplesmente não respondeu. Outros
@@ -113,19 +113,19 @@ processos identificam a falha por omissão através de timeouts, as requisiçõe
 seja ultrapassado, considera-se esse estado com falha.
 
 
-Caso o sistema opere de forma assíncrona, esta falha pode ser tratada como uma reposta ainda não recebida ou lenta. Para 
+Caso o sistema opere de forma assíncrona, esta falha pode ser tratada como uma reposta ainda não recebida ou lenta. Para
 que o colapso da falha possa ser identificado, outros processos precisam detectar essa ocorrência, considerando o timeout
 de cada processo envolvido. Diferente do anterior, o sistema síncrono tem por sua vez os períodos idênticos de reposta de
 cada processo, caso não responde nesse tempo preestabelecido, concluiu-se falha na execução.
 
 
 Outro ponto a ser abordado no que se refere a falhas por omissão, são as falhas por comunicação. Considere-se os princípios
-simples de comunicação, o envio e recebimento de mensagens também possuem falhas. O fluxo inicia-se enviando uma mensagem, 
+simples de comunicação, o envio e recebimento de mensagens também possuem falhas. O fluxo inicia-se enviando uma mensagem,
 está é armazenada no buffer do recebedor. Quando o processo identifica que o buffer possui novas entradas, recupera essa
 mensagem. Quando ele não se concretiza por completo, o canal de comunicação determina falha de omissão por comunicação.
 
 
-Falhas arbitrárias ou bizantinas – avalia-se como uma das piores situações de falhas dentro do sistema. Isso porque é de 
-difícil detecção, já que seus sintomas não são visíveis tão facilmente. Nesse estado, pode-se assumir valores diferentes 
+Falhas arbitrárias ou bizantinas – avalia-se como uma das piores situações de falhas dentro do sistema. Isso porque é de
+difícil detecção, já que seus sintomas não são visíveis tão facilmente. Nesse estado, pode-se assumir valores diferentes
 dos seus dados, retornando um resultado errado mesmo que as vezes próximo do esperado. Noutro exemplo, falhas arbitrarias
 podem surgir afetando os canais de comunicação com mensagens corrompida ou inconsistentes.
