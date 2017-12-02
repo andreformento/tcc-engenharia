@@ -17,9 +17,20 @@ Kubernetes, tornando a escolha do serviço de plataforma em nuvem independente d
 com que o software roda. Ou seja, há um desacoplamento da infraestrutura com o software
 (\autoref{ferramentas}).
 
-\section{@Métricas}
+\section{Métricas}
 
-Colocar aqui os gráficos da execução do programa
+Foram feitos vários testes em cima da aplicação para saber quais eram seus limites.
+É importante deixar claro que as métricas ocorreram em um notebook pessoal com poder
+de processamento limitado. Em um ambiente real (nuvem) poderão existir diversas máquinas
+disponíveis para que sejam utilizadas (escalabilidade horizontal) permitindo que os
+números exibidos abaixo sejam muito maiores.
+
+\subsection{Ferramenta para geração de métricas - Gatling}
+
+Os testes de perfomance realizados em cima da aplição de reserva de ingressos foram
+feitos com a ferramenta Gatling na versão 2.3.
+Com a ferramenta é possível testar alta performance de aplicações web
+(\cite{gatling-docs}) que seguem o protocol HTTP.
 
 \subsection{Especificações de teste}
 
@@ -111,6 +122,10 @@ Os testes foram realizados em um notebook de uso pessoal.
 
 \end{alineas}
 
+\subsection{@@Resultados das métricas}
+
+
+
 \section{@Trabalhos futuros}\label{trabalhos-futuros}
 
-Implementação de outros serviços; Implementação do frontend
+@@ Implementação de outros serviços; Implementação do frontend
