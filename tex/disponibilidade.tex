@@ -10,15 +10,24 @@ Caso haja alguma anomalia ou falhas que comprometam o sistema, este é capaz de 
 e disponibilizar outro ambiente livre que atenda o operador, ou seja, a interrupção muitas vezes não impactam os processos
 existentes.
 
-
 Toda essa complexidade resulta em um sistema que opera muitas vezes em mais de 99,99\% do tempo. Esse período é medido
 anualmente,para conhecer o tempo de inatividade do componente utiliza-se uma fórmula, esta possui como parâmetros, graus
-de tolerância e
-tempo médio entre falhas. Os cálculos são feitos com a equação abaixo;
-MTBF- Mean Time Between Failures - (tempo médio entre falhas)
-MTTR- Mean Time To ReMpair - (tempo médio de recuperação)
-Disponibilidade = MTBF / (MTBF + MTTR).
+de tolerância e tempo médio entre falhas.
+Os cálculos são feitos conforme a \autoref{equacao-disponibilidade}.
 
+\begin{equation}\label{equacao-disponibilidade}
+Disponibilidade = \frac{MTBF}{MTBF + MTTR}
+\end{equation}
+
+\index{alíneas}\index{subalíneas}\index{incisos}Onde:
+
+\begin{itemize}
+	
+	\item MTBF: Mean Time Between Failures - tempo médio entre falhas
+
+	\item MTTR: Mean Time To Repair - tempo médio de reparação
+		
+\end{itemize}
 
 Um sistema que garante 99\% do tempo anualmente tolera até 3,65 dias por ano de inatividade. Números atrativos para muitas
 empresas, porém organizações que atuam na internet exigem um tempo disponível mais alto do que o exemplificado. Organizações
