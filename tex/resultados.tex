@@ -64,7 +64,15 @@ respondem em até 1200 milisegundos.
   \label{03000-requests-config-10s-duration-10}
 \end{figure}
 
+Na \autoref{05000-requests-config-10s-duration-10} são feitas 5000 requisições.
+O sistema responde todas elas com sucesso e um desvio padrão aumenta para 569 milisegundos
+para o tempo de respostas das requisições.
+78\% das requisições respondem em menos de 800 milisegundos, 18\% das requisições
+respondem em até 1200 milisegundos e apenas 4\% das requisições
+respondem com tempo maior que 1200 milisegundos.
 
-\section{@Trabalhos futuros}\label{trabalhos-futuros}
-
-@@ Implementação de outros serviços; Implementação do frontend
+\begin{figure}[h]
+  \includegraphics[width=\textwidth]{05000-requests-config-10s-duration-10}
+  \caption{Dados do Gatling com 5000 requisições executados em 10 segundos}
+  \label{05000-requests-config-10s-duration-10}
+\end{figure}
