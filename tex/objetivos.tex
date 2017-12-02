@@ -16,39 +16,40 @@ Tornar um sistema escalável é um grande desafio.
 Para ser possível, vários pontos da arquitetura devem ter a
 abordagem adequada. Por exemplo, a forma como o sistema é divido implica em vários
 fatores.
-A abordagem de microserviços (\autoref{microservicos}) evita que haja um ponto único de falha. A
-utilização do conceito de microserviços possibilitará a escalabilidade de maneira
+A abordagem de microserviços (\autoref{microservicos}) é uma técnica que será abordada
+com o intuito de evitar pontos únicos de falha e boa divisão de responsabilidades
+- através de contextos bem definidos, possibilitando assim a criação de serviços que
+atendam especificamente um contexto.
+A utilização do conceito de microserviços possibilitará a escalabilidade de maneira
 simplificada, rápida e de acordo com o que é visto atualmente no mercado.
-
-Um sistema de vendas de ingressos online é abrangente e envolve divulgação,
-exibição de eventos, lugares e valores disponíveis, reserva do ingresso -
-que é limitada, assim como a venda e suporte pós-venda. Um sistema completo possui essas
-e outras características. Do ponto de visto técnico, várias das abordagens discutidas
-podem ser utilizadas em muitos desses pontos. Porém, a parte prática será desenvolvida
-apenas em relação ao serviço de backend que atentererá requisições do contexto de reserva
-de ingressos.
 
 \section{Implementação da reserva de ingressos}
 
-A parte aplicada do trabalho irá tratar especificamente o contexto de reserva de ingressos.
-A implementação do serviço de reserva de ingressos será a parte prática do trabalho
-e o código é discutido em detalhes (\autoref{implementacao-do-servico}). Não há implementação
+A parte prática será desenvolvida apenas em relação ao serviço de backend que
+atentererá requisições no contexto de reserva de ingressos.
+Porém, um sistema de vendas de ingressos online é abrangente e envolve divulgação,
+exibição de eventos, lugares e valores disponíveis, reserva do ingresso -
+que é limitada, assim como a venda e suporte pós-venda. Um sistema completo possui essas
+e outras características. Do ponto de visto teórico, várias das abordagens discutidas
+podem ser utilizadas em muitos desses pontos.
+
+A implementação do serviço de reserva de ingressos terá o código discutido
+em detalhes (\autoref{implementacao-do-servico}). Não há implementação
 de interface do usuário (chamado de frontend), apenas a implementação dos algoritmos
 que rodam nos servidores (backend).
 
-Serão abordadas técnicas de microserviços.
-Com isso, vários dos itens abordados poderão ser aplicados em outras partes de um sistema
+Com microserviços vários dos itens abordados poderão ser aplicados em outras partes
+de um sistema
 de venda de ingressos em formato de serviços que terão os mais diversos contextos.
-A aplicação terá uma API REST (\autoref{api}) que responderá requisições HTTP.
+A aplicação terá uma API REST (\autoref{api}) que responderá requisições
+seguindo o protocolo HTTP.
 
 \section{Infraestrutura para rodar o serviço}
 
 O serviço será uma aplicação que rodará em um ambiente Linux através
-de uma imagem Docker (\autoref{docker})
-e poderá ser replicada com Kubernetes (\autoref{kubernetes}).
-Todas as essas ferramentas
-serão abordadas, assim como, técnicas de programação voltadas a seriços de alto
-desempenho.
+de uma imagem Docker e poderá ser replicada com Kubernetes.
+Todas as essas ferramentas serão abordadas, assim como, técnicas de programação
+voltadas a serviços de alto desempenho.
 
 A sugestão é que essa infraestrutura inteira rode em alguma plataforma em nuvem
 (\autoref{infraestrutura-em-nuvem}) para que se obtenham os recursos necessários para que
@@ -58,20 +59,23 @@ venda de ingressos.
 \subsection{Ferramentas de infraestrutura}
 
 \index{alíneas}\index{subalíneas}\index{incisos}Ter vários microserviços implica em gerenciar
-vários sistemas. E isso significa que automação é fundamental para que isso funcione
+vários sistemas.
+Para ter sucesso neste gerenciamento é fundamental que haja automação
 \cite{martin-fowler-microservices}.
-Para simplificar o gerenciamento dos serviços serão utilizadas algumas ferramentas que
+Para simplificar o gerenciamento dos serviços serão mencionadas algumas ferramentas que
 irão facilitar a manutenção, escalabilidade e monitoramento:
 
 \begin{alineas}
 
-  \item Docker
+  \item Docker (\autoref{docker})
 
   \begin{alineas}
-     \item Para criação, teste e implantação de aplicações rapidamente \cite{aws-o-que-e-o-docker}
+     \item Para criação, teste e implantação de aplicações \cite{aws-o-que-e-o-docker}
+     \item Os scripts para rodar a aplicação usarão a ferramenta
+           (\autoref{como-rodar-a-aplicacao})
   \end{alineas}
 
-  \item Kubernetes
+  \item Kubernetes (\autoref{kubernetes})
 
   \begin{alineas}
      \item Para proporcionar escalabilidade horizontal de maneira automatizada através de métricas
@@ -79,28 +83,3 @@ irão facilitar a manutenção, escalabilidade e monitoramento:
   \end{alineas}
 
 \end{alineas}
-
-\section{Organização}
-
-O trabalho é divido em 4 partes:
-
-\begin{itemize}
-    \item \autoref{introducao} Introdução: nesta primeira parte é introduzido o que
-          será tratado no trabalho, explicando o problema e deixando claros os objetivos;
-
-    \item \autoref{conceitos} Conceitos: nesta parte são discutidos os fundamentos e
-          argumentos para as tomadas de decisões de quais serão as melhores
-          abordagens para resolver o problema;
-
-    \item \autoref{implementacao} Implementação: nesta parte são explicadas as
-          implementações do código fonte do serviço de reserva de ingressos, assim
-          como, de como foi implementada e implantada a infraestrutura;
-
-    \item \autoref{resultados} Resultados: nesta parte são exibidos os resultados
-          práticos da implementação e conclusão das escolhas tomadas.
-
-\end{itemize}
-
-Todas as implementações mencionadas estão disponíveis através do link abaixo:
-
-\url{https://github.com/andreformento/term-paper}
