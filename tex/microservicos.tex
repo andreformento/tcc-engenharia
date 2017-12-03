@@ -1,4 +1,4 @@
-\chapter{@@Microserviços}\label{microservicos}
+\chapter{Microserviços}\label{microservicos}
 
 Como expressado por
 \cite{building-microservices}, ``Microserviços são pequenos serviços
@@ -68,35 +68,43 @@ envolvendo os serviços.
 Desta forma, o serviço de reserva de ingressos terá uma camada a mais
 para ser acessada, abstraindo a segurança para esta camada.
 
-
 \section{@@Comparação entre microserviços e sistemas monolíticos}\label{microservicos-monoliticos}
-A implementação de microseviços deve-se ao fato de resolver problemas na estrutura do sistema. Com o aumento exponencial
-na quantidade de aplicações que são desenvolvidas, tem-se milhares de bases de códigos. Essas bases
-aumentam tanto de tamanho como de complexidade, características dificultam a equipe de desenvolvimento, ao passo que a
-medida que o código cresce, torna-se difícil reparar ou realizar mudanças. Esse cenário torna-se mais desafiador quando
-fala-se de um sistema monolítico. Para que se entenda as vantagens de usar os microserviços, pode-se comparar a arquitetura
-monolítica.
 
+Um sistema é considerado monolítico quando todas as implementações estão em um mesma base de código
+e há forte dependência entre os módulos no nível de código.
 
-Um programa monolítico é estruturado usando desvios condicionais ou incondicionais, não fazendo uso explicito de mecanismos
-auxiliares de programação que permitam uma melhor estruturação do
-controle \cite{teoria-da-computacao-3ed-ufrgs-maquinas-universais-e-computabilidade}.
+Quando há um único sistema, costuma haver separação de responsabilidades através de bibliotecas.
+Essas bibliotecas passam a ser usadas em várias partes do sistema. Porém, elas estão fortemente
+acopladas à solução.
+Mesmo contendo várias bibliotecas, todas estarão atreladas ao mesmo processo.
+Uma vez que se faz alterações em qualquer delas, resulta em uma implantação do sistema inteiro.
 
+Nos microserviços a independência de sua implantação é algo tido como uma das razões para
+utilizá-los ao invés das bibliotecas.
 
-Nos microserviços a independência de sua implantação é algo tido como uma das razões para utilizá-los ao invés das
-bibliotecas. Estas são atreladas a um único processo, mesmo contendo várias bibliotecas, todas estarão atreladas ao mesmo
-processo, uma vez que se faz alterações em qualquer delas, resulta em uma implantação do aplicativo inteiro.
-As vantagens em microserviços abrangem desde a equipe atuante no desenvolvimento, já que com nesse paradigma, elas planejam
-uma atuação em serviços diferentes, sem que essas mudanças afetem os demais integrantes. Adere a escalabilidade de forma
-seletiva, possibilitando escalar somente a parte do sistema que necessita de ajustes.
+Com o aumento do desenvolvimento de aplicações cresce a base de código.
+Essas bases aumentam tanto de tamanho como de complexidade,
+tornando-se difícil fazer manutenções ou criar melhorias.
+
+A implementação utilizando o conceito de microseviços trata de problemas na arquitetura do sistema.
+A abstração passa da camada de código para a camada de comunicação. Desta forma, ao invés de haver
+integração através do código - uma função chamando outra, a integração ocorre através de chamadas de
+APIs.
+
+Com um contrato bem definido, é possível que um serviço faça utilização do outro.
+Com isso, não importa em qual linguagem é desenvolvido o serviço.
+Mantendo o contrato, podem haver alterações, manutenções, melhorias, reimplementações,
+e assim por diante, sem afetar quem utiliza aquele serviço.
+
+As vantagens em microserviços abrangem desde a equipe atuante no desenvolvimento, já que com nesse paradigma,
+elas planejam uma atuação em serviços diferentes, sem que essas mudanças afetem os demais integrantes.
+Adere a escalabilidade de forma seletiva, possibilitando escalar somente a parte do sistema que necessita de ajustes.
 A divisão do sistema também beneficia a velocidade de desenvolvimento, o código é de fácil entendimento e
 compilam mais rápido por serem soluções relativamente pequenas, conforme mencionado em um artigo escrito pelos
 arquitetos da Amazon AWS, \citeonline{deploying-java-microservices-on-amazon-ec2-container-service}.
 
 \begin{citacao}
-A migração de um aplicativo monolítico para um conjunto de microserviços em contêiner pode parecer uma tarefa assustadora.
-Seguindo as etapas assertivamente, você pode começar a contornar aplicativos monolíticos, aproveitando o ambiente de tempo
-de execução do contêiner e iniciando o processo de reestruturação em microservices. No geral, os microservices em
-contentores são mais rápidos de desenvolver, mais fáceis de iterar e mais económicos para manter e
+No geral, os microservices em contentores são mais rápidos de desenvolver,
+mais fáceis de iterar e mais económicos para manter e
 proteger \cite{deploying-java-microservices-on-amazon-ec2-container-service}.
 \end{citacao}
