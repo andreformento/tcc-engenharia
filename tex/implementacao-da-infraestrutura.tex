@@ -10,64 +10,9 @@ tornar o produto dependente da plataforma onde está rodando. Por isso, é recom
 a utilização de meios que deixem desacoplados os produtos da plataforma com o produto
 digital desenvolvido.
 
-\subsection{@Docker}\label{docker}
-Para a construção do trabalho, faz-se necessário abordar sobre uma ferramenta que auxilia na execução de aplicações web.
-A ferramenta que se trata é o docker, segundo a definição do seu fundador Solomon Hykes. 
-“O Docker é um conjunto de ferramentas para criar aplicativos distribuídos de forma muito específica. O foco da filosofia 
-do projeto é a ideia de que os desenvolvedores podem escolher as ferramentas de que precisam para criar aplicativos da 
-maneira que melhor se adequar às suas necessidades e preferências. Como resultado, nem todos os projetos usam o Docker
-da mesma maneira.” \cite {solomon-hykes}.
+\input{docker}
 
-
-Existe uma definição complementar. “Docker é uma plataforma Open Source escrita em Go, que é uma linguagem de
-programação de alto desempenho desenvolvida dentro do Google, que facilita a criação e administração de ambientes isolados.”
-\cite {mundodocker-01}.
-
-
-Docker opera em ambiente virtual que possui como base os Contêineres Linux (LXC). “Contêineres Linux (LXC) é um tipo de
-virtualização em nível de sistema operacional que proporciona a execução de múltiplas instâncias isoladas de um determinado
-sistema operacional dentro de um único hospedeiro. O conceito é simples e antigo, sendo o comando chroot seu precursor mais
-famoso. Com o chroot é possível segregar os acessos de diretórios e evitar que o usuário possa ter acesso à estrutura raiz 
-(“/” ou root).” \cite {sinestec-01}.
-
-
-A adoção do Docker está relacionada em atender uma demanda de desempenho de hardware e software. A justificativa para utiliza
-r essa ferramenta quando se fala de hardware está no fato de evitar travamento dos equipamentos, agregar mais processamento 
-quando necessário e desativá-los em baixo números de requisições.
-O trecho seguinte descreve um dos problemas encontrados quando se utiliza máquinas virtuais em vez de contêineres. “Lembrando
-que cada máquina virtual é um sistema operacional praticamente inteiro instalado sobre um equipamento físico e rodando para
-servir a aplicação. Com certeza o servidor de desenvolvimento não teria recursos suficientes para rodar todos esses sistemas
-simultaneamente, e nossa máquina física travaria".\cite {aprendendo-docker}.
-
-
-Quando se questiona de software, as vantagens da utilização do docker estão em servir como instrumento versátil, que entrega
-um ambiente pronto para rodar aplicações. Essa versatilidade pode ser aproveitada para iniciar serviços rapidamente e responder
-a aplicação de forma assertiva.
-
-
-“O Docker possibilita o empacotamento de uma aplicação ou ambiente inteiro dentro de um contêiner, e a partir desse momento o
-ambiente inteiro torna-se portável para qualquer outro Host que contenha o Docker instalado.
-Isso reduz drasticamente o tempo de deploy de alguma infraestrutura ou até mesmo aplicação, pois não há necessidade de ajustes
-de ambiente para o correto funcionamento do serviço, o ambiente é sempre o mesmo, configure-o uma vez e replique-o quantas vezes
-quiser”. \cite {mundodocker-02}
-
-
-Como mencionado, a redução do tempo é um dos fatores percebidos ao adotar contêineres para execução de aplicações. A
-escalabilidade também é satisfeita como descrito na citação abaixo.
-“Um dos benefícios da abstração entre o sistema host e o contêiner é que, dado um projeto correto de aplicação, a 
-escalabilidade pode ser simples e direta. Projeto orientado a serviço (discutido mais tarde) combinado com aplicações
-conteinerizadas fornecem as bases para a escalabilidade fácil.
-Um desenvolvedor pode executar alguns contêineres em sua estação de trabalho, enquanto este sistema pode ser escalado
-horizontalmente em uma área de preparação ou teste. Quando os contêineres entram em produção, eles podem escalar novamente”. \cite {digitalocean-01}.
-
-\subsection{@Kubernetes}\label{kubernetes}
-
-Escrever sobre Kubernetes
-\url{https://www.concrete.com.br/2017/06/26/docker-kubernetes-e-openshift/}
-
-\url{https://dzone.com/articles/microservices-with-kubernetes-and-docker}
-
-
+\input{kubernetes}
 
 \section{Requisitos da aplicação}\label{requisitos-da-aplicacao}
 
