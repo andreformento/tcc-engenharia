@@ -1,5 +1,10 @@
 \chapter{Balanceador de carga}\label{balanceador-de-carga}
 
+Pensando no problema da quantidade de carga que um servidor aguenta, ou seja, quantas requisições ele consegue atender,
+surge a solução de ter mais servidores disponíveis para atender essas requisições.
+Para que haja distribuição dessas requisições é necessário um mecanismo, e é isso que o balanceador de carga se
+propõe a resolver.
+
 Balanceamento de carga é uma técnica que tem por objetivo a distribuição de carga de trabalho uniformemente entre dois ou
 mais computadores. Essa técnica também pode ser utilizada em enlaces de redes e discos rígidos. O mecanismo visa atingir
 escalabilidade do sistema e propiciar alta disponibilidade de acesso e respostas de requisições. Ou seja, a medida que a
@@ -20,15 +25,21 @@ sistema pode ocorrer de maneira linear - com o passar dos anos, por exemplo; ou 
 que pode ocorrer com o rápido aumento de requisições em questão de minutos.
 No caso do problema da reserva de ingressos, esses picos podem ocorrer regularmente a cada abertura da venda de ingressos.
 Com estes picos, cada vez que houver aumento de processamento das requisições e os servidores entrarem em
-estado de sobrecarga, mais servidores podem ser disponibilizados para atenderem a alta demanda e o balanceador de carga
-ficaria responsável por distribuir a carga para esses novos servidores, tornando assim a estrutura escalável
-horizontalmente.
+estado de sobrecarga, mais servidores podem ser disponibilizados para atenderem a alta demanda.
+O balanceador de carga ficaria responsável por distribuir a carga para esses novos servidores,
+tornando assim a estrutura escalável horizontalmente.
 
 Sugere-se como uma solução que atende as exigências citadas a utilização de balanceamento de carga baseado em hardware.
 Essa tecnologia tem por base dispositivos de rede. Esses diapositivos são neutros em relação aos aplicativos, dessa forma
 consegue-se atuar em qualquer plataforma. Em resumo, os componentes oferecem um "servidor virtual" para todos os serviços
 que requerem acesso, quando o servidor aceita a requisição, encaminha a mesma para o "servidor real" disponível para atender
-e processar os dados. Suas vantagens frente aos demais, é o controle dos servidores, sua disponibilidade, atividade e
-operação, monitorado do estado do hardware, isso garante que o sistema irá responder todas as requisições sem perder
-desempenho. Com esse gerenciamento também é possível detectar quando os servidores recebem baixo número de acessos, nesse
+e processar os dados.
+Isso garante que o sistema irá responder todas as requisições sem perder desempenho.
+Com esse gerenciamento também é possível detectar quando os servidores recebem baixo número de acessos, nesse
 estado algumas máquinas são desativadas temporariamente, visando economia de energia.
+
+O serviço de reserva de ingressos poderá rodar em vários servidores para atender muitas requisições.
+O balanceador de cargas ficará responsável por distribuir as requisições entre todos os servidores disponíveis.
+Porém, quando a demanda por reservas de ingressos for baixa, poderão haver poucos servidores.
+Com o balanceador de cargas abstraindo essa estrutura, o cliente que utiliza essa infraestrutura
+não notará diferença na utilização.
