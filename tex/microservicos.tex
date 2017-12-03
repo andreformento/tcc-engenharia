@@ -54,6 +54,20 @@ Considerando que a reserva de ingressos é um contexto bem definido, pode haver 
 especificamente desta parte. Desta forma, é possível isolar e pensar de forma objetiva em como
 lidar com esse problema.
 
+\section{API Gateway}\label{api-gateway}
+
+A quantidade de serviços que um sistema tem pode ser grande.
+É importante abstrair essa complexidade para quem usa o sistema.
+Uma forma de fazer isso é utilizando o conceito de API Gateway.
+Com isso, há um ponto único de acesso pelos clientes, sejam eles
+mobile, webiste, ou outro sistema.
+Os serviços passam a ser acessados de maneira indireta.
+Também é responsabilidade do API Gateway lidar com a segurança
+envolvendo os serviços.
+
+\cite{pattern-api-gateway-backend-for-front-end}
+
+
 \section{Comparação entre microserviços e sistemas monolíticos}\label{microservicos-monoliticos}
 A implementação de microseviços deve-se ao fato de resolver problemas na estrutura do sistema. Com o aumento exponencial
 na quantidade de aplicações que são desenvolvidas, tem-se milhares de bases de códigos. Essas bases
