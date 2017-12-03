@@ -34,14 +34,17 @@ feitos com a ferramenta Gatling na versão 2.3.
 Com a ferramenta é possível testar alta performance de aplicações web
 \cite{gatling-docs} que seguem o protocolo HTTP.
 
-\subsection{@@Gráficos da análises de desempenhos}
+\subsection{Gráficos da análises de desempenhos}
 
 O teste de performance de requisições foi feito usando a
 estratégia do método heavisideUsers \cite{gatling-simulation-setup}
 que o Gatling possui, simulando assim a utilização simultânea do sistema por
 grande quantidade de usuários.
-Todas as requisições da análise foram configuradas para serem executadas no período
-de 10 segundos.
+As requisições da análise da
+\autoref{03000-requests-config-10s-duration-10},
+\autoref{05000-requests-config-10s-duration-10}
+e \autoref{10000-requests-config-10s-duration-13}
+foram configuradas para serem executadas no período de 10 segundos.
 Os testes foram feitos para medir a degradação do sistema em relação ao aumento do
 número de requisições simulando um ambiente onde haveriam muitas requisições para
 reserva de ingressos.
@@ -49,8 +52,6 @@ Com a degração do sistema as respostas começam a demorar mais, ou seja,
 o teste demora mais para ser finalizado conforme o aumento do número de requisições.
 Com isso, o único parâmetro que muda de um teste para o outro
 é o número de requisições realizadas.
-Todos os resultados com todos os testes realizados pode ser consultados de maneira
-iterativa através do link \url{https://andreformento.github.io/term-paper/index.html}.
 
 Na \autoref{03000-requests-config-10s-duration-10} são feitas 3.000 requisições apenas.
 O sistema responde todas elas com sucesso e um desvio padrão de 241 milisegundos
@@ -93,3 +94,23 @@ um ambiente de produção.
   \label{10000-requests-config-10s-duration-13}
 \end{figure}
 
+A \autoref{28000-requests-config-30s-duration-34} possui o tempo de teste configurado
+com 30 segundos de execução.
+O que se pode concluir com os dados analisados é que a aplicação consegue atender
+em torno de 28.000 requests com sucesso em 30 segundos com desvio padrão de
+4111 milisegundos.
+O tempo de respostas é considerado alto - imaginando um usuário aguardando em
+torno de 5 segundos para saber se sua reserva foi realizada.
+Porém, a solicitação da reserva é atendida.
+
+Com a escalabilidade horizontal é possível começar a expandir esse poder de processamento.
+Com mais máquinas disponíveis o tempo de resposta das aplicações poderia ser reduzido.
+
+\begin{figure}[h]
+  \includegraphics[width=\textwidth]{28000-requests-config-30s-duration-34}
+  \caption{Dados do Gatling com 28.000 requisições executados em 34 segundos}
+  \label{28000-requests-config-30s-duration-34}
+\end{figure}
+
+Todos os resultados com todos os testes realizados pode ser consultados de maneira
+iterativa através do link \url{https://andreformento.github.io/term-paper/index.html}.
