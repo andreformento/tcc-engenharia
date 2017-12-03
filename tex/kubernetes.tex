@@ -1,7 +1,52 @@
-\subsection{@Kubernetes}\label{kubernetes}
+\subsection{Orquestração de containers com Kubernetes}\label{kubernetes}
 
-Escrever sobre Kubernetes
+\begin{citacao}
+Orquestração de containers é a capacidade de provisionar automaticamente
+a infraestrutura necessária para atender às solicitações das aplicações web
+por meio de containers do Docker \cite{docker-kubernetes-e-openshift}.
+\end{citacao}
 
-\url{https://www.concrete.com.br/2017/06/26/docker-kubernetes-e-openshift/}
+Através da ferramenta Kubernetes é possível criar cluster (\autoref{cluster})
+de aplicações em nuvem de maneira que seja fácil o seu gerenciamento.
+Abaixo são listadas as vantagens em usar o Kubernetes:
 
-\url{https://dzone.com/articles/microservices-with-kubernetes-and-docker}
+\begin{itemize}
+
+	\item Se houver algum problema no container, o Kubernetes identifica e recria -
+          mantendo assim a disponibilidade do serviço;
+    \item Garante estabilidade das aplicações;
+    \item Através de métricas provisiona novas instâncias da aplicação,
+          proporcionando dessa forma auto escalabilidade de maneira horizontal;
+    \item Aproveitamento melhor da máquina em que roda a aplicação - que em alguns
+          casos pode rodar mais de um tipo de serviço, dependendo da estratégia
+          que a infraestrutura utilizar;
+    \item Possui um balanceador de carga para dividir as requisições entre
+          aplicações instanciadas;
+    \item Quando há a implantanção de uma nova versão do serviço e for identificado
+          algum problema, é possível fazer o rollback de maneira simples.
+
+\end{itemize}
+
+Com o uso de containers Dockers e o seu gerenciamento através do Kubernetes é possível
+obter uma infraestrutura robusta, permitindo assim a escalabilidade necessária que permite
+grande poder de processamento e atendimento de muitas requisições.
+
+%@manual{docker-kubernetes-e-openshift,
+%	Author = {Gustavo Costa},
+%	Date-Added = {2017-12-03 17:37:50 +0000},
+%	Date-Modified = {2017-12-03 17:37:50 +0000},
+%	Organization = {Concrete Solutions},
+%	Title = {As diferenças entre Docker, Kubernetes e Openshift},
+%	Url = {https://www.concrete.com.br/2017/06/26/docker-kubernetes-e-openshift/},
+%	Urlaccessdate = {03 dez. 2017},
+%	Year = {2017}}
+%
+%@manual{microservices-with-kubernetes-and-docker,
+%	Author = {Piotr Mińkowski},
+%	Date-Added = {2017-12-03 17:37:50 +0000},
+%	Date-Modified = {2017-12-03 17:37:50 +0000},
+%	Organization = {DZone},
+%	Title = {Microservices With Kubernetes and Docker},
+%	Url = {https://dzone.com/articles/microservices-with-kubernetes-and-docker},
+%	Urlaccessdate = {03 dez. 2017},
+%	Year = {2017}}
