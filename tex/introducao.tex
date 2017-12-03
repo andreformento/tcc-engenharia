@@ -1,5 +1,33 @@
 %\chapter*[Introdução]{Introdução}
 %\addcontentsline{toc}{chapter}{Introdução}
 
-\section{@Falta escrever a introdução do trabalho}
-@Aqui precisa fazer uma introdução do trabalho.
+Sites que vendem ingresso online normalmente costumam agendar o início da venda
+para um determinado horário.
+Neste momento, vários usuários tentam realizar a compra ao mesmo tempo
+- congestionando, ou até mesmo, derrubando o site.
+A experiência costuma ser pior para eventos grandes, onde há muita procura.
+
+O trabalho usa uma abordagem de microserviços e implementa uma parte deste
+processo - que é o serviço de reserva do ingresso.
+Este serviço roda em um servidor que pode estar na nuvem.
+É nele que fica a lógica do controle do limite de ingressos que podem
+ser vendidos num determinado evento.
+Este controle deve ser feito de tal maneira que não prejudique a utilização
+do sistema.
+Ou seja, mesmo em momentos de grande demanda, o sistema deve continuar
+respondendo de maneira satisfatória - mantendo a performance e a disponibilidade.
+Por isso, será explicada a importância da escalabilidade horizontal,
+junto com balanceamento de cargas.
+
+Serão gerados resultados para demonstrar aspectos de desempenho da aplicação
+implementada e limites técnicos que uma máquina servidora pode ter. Por fim,
+serão mencionadas ferramentas, como Docker e Kubernetes, que ajudam na
+implantação deste tipo de arquitetura.
+
+% escalabilidade
+% performance
+% disponibilidade
+% microserviço
+% resultado
+% balanceamento de cargas
+% nuvem
