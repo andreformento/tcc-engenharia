@@ -1,37 +1,34 @@
 \subsection{Docker}\label{docker}
 
-Para a construção do trabalho, faz-se necessário abordar sobre uma ferramenta que auxilia na execução de aplicações web.
-A ferramenta que se trata é o docker, segundo a definição do seu fundador Solomon Hykes.
+Foi adotada a ferramenta Docker para que fosse simples a execução do serviço de reserva de ingressos.
 
 \begin{citacao}
-O Docker é um conjunto de ferramentas para criar aplicativos distribuídos de forma muito específica. O foco da filosofia
-do projeto é a ideia de que os desenvolvedores podem escolher as ferramentas de que precisam para criar aplicativos da
-maneira que melhor se adequar às suas necessidades e preferências. Como resultado, nem todos os projetos usam o Docker
-da mesma maneira \cite{solomon-hykes}.
+O Docker é um conjunto de ferramentas para criar aplicativos distribuídos de forma muito específica.
+O foco da filosofia do projeto é a ideia de que os desenvolvedores podem escolher as ferramentas
+de que precisam para criar aplicativos da maneira que melhor se adequar às suas necessidades e preferências.
+Como resultado, nem todos os projetos usam o Docker da mesma maneira \cite{solomon-hykes}.
 \end{citacao}
 
-Existe uma definição complementar.
+Conforme descrito por \citeonline{mundodocker-o-que-e-docker}, ``[Docker] facilita a criação e administração de ambientes isolados``.
+Ou seja, é uma forma de rodar um aplicação em um ambiente Linux com todos os recursos necessários sem interferir
+diretamente na máquina que executa a aplicação - por causa do isolamento.
 
-\begin{citacao}
-Docker é uma plataforma Open Source escrita em Go, que é uma linguagem de
-programação de alto desempenho desenvolvida dentro do Google, que facilita a criação e administração de ambientes isolados
-\cite{mundodocker-01}.
-\end{citacao}
-
-Docker opera em ambiente virtual que possui como base os Contêineres Linux (LXC).
 \begin{citacao}
 Contêineres Linux (LXC) é um tipo de
 virtualização em nível de sistema operacional que proporciona a execução de múltiplas instâncias isoladas de um determinado
-sistema operacional dentro de um único hospedeiro. O conceito é simples e antigo, sendo o comando chroot seu precursor mais
-famoso. Com o chroot é possível segregar os acessos de diretórios e evitar que o usuário possa ter acesso à estrutura raiz
-("/" ou root) \cite{sinestec-01}.
+sistema operacional dentro de um único hospedeiro \cite{sinestec-01}.
 \end{citacao}
 
+Conforme a citação anterior, é possível executar vários serviços dentro de uma mesma máquina, podendo ser serviços
+replicados ou vários tipos diferentes de serviços.
+Na aplicação de reserva de ingressos, que foi desenvolvida em Java e precisa de uma JVM para rodar, não precisaria
+de nenhuma instalação na máquina de qualquer tipo de programa.
+Tudo estaria instalado dentro da imagem Docker criada para rodar a aplicação.
+Então, o banco de dados, ou outro serviço que a aplicação dependesse, também poderia rodar em um contêiner Docker.
+Ficaria fácil até mesmo trocar toda a implementação para rodar em outra linguagem.
 
-A adoção do Docker está relacionada em atender uma demanda de desempenho de hardware e software. A justificativa para utilizar
-essa ferramenta quando se fala de hardware está no fato de evitar travamento dos equipamentos, agregar mais processamento
-quando necessário e desativá-los em baixo números de requisições.
-O trecho seguinte descreve um dos problemas encontrados quando se utiliza máquinas virtuais em vez de contêineres.
+A justificativa para utilizar essa ferramenta também está relacionada a travamentos, rápida execução e desativaçao.
+O contêiner é uma evolução em relação ao uso de máquinas virtuais.
 
 \begin{citacao}
 Lembrando que cada máquina virtual é um sistema operacional praticamente inteiro instalado sobre um equipamento físico e
@@ -50,17 +47,18 @@ O Docker possibilita o empacotamento de uma aplicação ou ambiente inteiro dent
 ambiente inteiro torna-se portável para qualquer outro Host que contenha o Docker instalado.
 Isso reduz drasticamente o tempo de deploy de alguma infraestrutura ou até mesmo aplicação, pois não há necessidade de ajustes
 de ambiente para o correto funcionamento do serviço, o ambiente é sempre o mesmo, configure-o uma vez e replique-o quantas vezes
-quiser \cite{mundodocker-02}.
+quiser \cite{mundodocker-o-que-e-docker}.
 \end{citacao}
 
-Como mencionado, a redução do tempo é um dos fatores percebidos ao adotar contêineres para execução de aplicações. A
-escalabilidade também é satisfeita como descrito na citação abaixo.
+Como mencionado, a redução do tempo é um dos fatores percebidos ao adotar contêineres para execução de aplicações.
+A escalabilidade também é satisfeita como descrito na citação abaixo.
 
 \begin{citacao}
 Um dos benefícios da abstração entre o sistema host e o contêiner é que, dado um projeto correto de aplicação, a
-escalabilidade pode ser simples e direta. Projeto orientado a serviço (discutido mais tarde) combinado com aplicações
+escalabilidade pode ser simples e direta. Projeto orientado a serviço combinado com aplicações
 conteinerizadas fornecem as bases para a escalabilidade fácil.
 Um desenvolvedor pode executar alguns contêineres em sua estação de trabalho, enquanto este sistema pode ser escalado
 horizontalmente em uma área de preparação ou teste.
-Quando os contêineres entram em produção, eles podem escalar novamente \cite{digitalocean-01}.
-\begin{citacao}
+Quando os contêineres entram em produção, eles podem escalar novamente
+\cite{o-ecossistema-do-docker-uma-visao-geral-da-conteinerizacao-pt}.
+\end{citacao}
