@@ -6,7 +6,7 @@ As vantagens que os microseviços trazem foram o motivo da escolha por esta abor
 Isso possibilitou separar e implementar apenas uma parte
 de uma solução mais geral, que é a venda de ingressos.
 Foi possível também que os testes de performance fossem realizados num ponto específico
-e deixado claro o compartamento no momento da vendas de ingressos.
+e deixado claro o comportamento no momento da vendas de ingressos.
 Esses dados geram estimativas inclusive para tomadas de decisão quanto aos custos
 que uma venda de ingressos pode gerar - e a escolha de qual plataforma utilizar.
 
@@ -14,19 +14,19 @@ que uma venda de ingressos pode gerar - e a escolha de qual plataforma utilizar.
 O resultados apresentados mostram que houve degradação dos serviços com o aumento do
 número de requisições.
 % escalabilidade / balanceamento de cargas
-Porém, usando a abordagem de escalabilidade horizontal, usando balanceamento de cargas,
+Porém, usando a abordagem de escalabilidade horizontal e o balanceamento de cargas,
 é possível que mais servidores sejam disponibilizados para atender essa alta demanda.
 
 Como o serviço de reserva de ingressos está desacoplado em um serviço de contexto bem
 definido, é possível lidar com ele de maneira independente.
 % nuvem
-Isso em um ambiente de nuvem (IaaS) torna possível auto escalabilidade com baixo esforço.
+Isso em um ambiente de nuvem (IaaS) torna possível a auto escalabilidade com baixo esforço.
 Com o uso de ferramentas que auxiliam na implantação, como Docker e Kubernetes,
-é possível automarizar o ambiente para que se comporte de maneira otimizada -
+é possível automatizar o ambiente para que se comporte de maneira otimizada -
 quando há grande demanda, vários servidores são disponibilizados, mas no momento
 de baixa utilização, várias máquinas podem ser desligadas.
 % performance / disponibilidade
-Isso influencia no desempenho do sistema.
+Isso influência no desempenho do sistema.
 A performance e a disponibilidade é garantida e a degradação é minimizada.
 
 % conclusão final :D
