@@ -5,18 +5,12 @@ surge a solução de ter mais servidores disponíveis para atender essas requisi
 Para que haja distribuição dessas requisições é necessário um mecanismo, e é isso que o balanceador de carga se
 propõe a resolver.
 
-Balanceamento de carga é uma técnica que tem por objetivo a distribuição de carga de trabalho uniformemente entre dois ou
-mais computadores. Essa técnica também pode ser utilizada em enlaces de redes e discos rígidos. O mecanismo visa atingir
-escalabilidade do sistema e propiciar alta disponibilidade de acesso e respostas de requisições. Ou seja, a medida que a
-demanda pelos serviços, recursos ou o número de usuários conectados aumentam, mais máquinas são disponibilizadas para incorporar
-o conjunto e auxiliar no processamento dos dados.
+Balanceamento de carga consiste em uma técnica para distribuição de carga de trabalho uniformemente entre dois ou mais
+computadores,enlaces de rede, UCPs, discos rígidos ou outros recursos. Intuito pelo qual visa o aperfeiçoamento da 
+utilização dos recursos, a maximização do desempenho, a diminuição do tempo de resposta e ainda evitar sobrecarga.
+Devido a redundância de múltiplos componentes a confiabilidade aumenta.(\cite{O-que-e-e-para-que-serve-o-balanceamento
+-de-carga})
 
-
-O balanceamento de rede, consiste na técnica de distribuição de tráfego de rede entre servidores. Essa solução visa entregar
-caminhos alternativos a fim de descongestionar os acessos atendendo um número maior de requisições. A segunda camada do
-balanceador de carga é lógica e tratada por software. Se comportam de forma transparente
-as aplicações, ou seja, quando um único servidor não comporta toda carga gerada, é possível iniciar uma nova instância em
-outro servidor e balancear a aplicação entre eles.
 
 \section{Balanceador de carga no serviço de reserva de ingressos}
 
