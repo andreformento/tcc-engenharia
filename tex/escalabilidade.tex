@@ -1,9 +1,11 @@
 \chapter{Escalabilidade}\label{escalabilidade}
 
-
-Escalabilidade é uns dos pontos centrais que o trabalho propoem, isso porque a alta escalabilidade esta
-atrelada a capacidade de um sistema conseguir se adequar a qualquer nivel de processamento e solicitação
-que nele for imposto. Esse tema abordará a escalabilidade de forma conceitual e como ela pode ser implementada.
+Conforme aumenta a quantidade de requisições de reserva de ingressos, mais recursos
+para atender essas demandas são necessários.
+Para lidar com este problema é utilizado o conceito de escalabilidade.
+Conforme Maurício Diana \cite[5]{diss-mdediana-2013}, escalabilidade proporciona
+a divisão das demandas para vários servidores, fazendo com que seja possível aumentar
+o poder de processamento.
 
 
 \begin{citacao}
@@ -19,14 +21,12 @@ criadas e distribuídas. \cite[3]{alexandre-morais-souza-2013}.
 
 \end{citacao}
 
+O aumento de requisições para um servidor pode provocar a sua deterioração ou indisponibilidade.
+As falhas desses serviços resultam em requisições sem respostas ou tempo de espera expirado.
+Por mais que uma máquina possua um alto poder de processamento, uma única máquina sempre
+terá uma limitação física.
 
-O trabalho sugere uma possivel solução para o problema de queda de serviços quando estes são 
-sujeitos a uma quantidade muita alta de requisições. A inatividade desses serviços resulta em perda 
-de acessos, requisições sem respostas ou tempo de espera expirado.A forma 
-como contorna-los serão tratadas nesse capitulo. 
-
-
-A escalabilidade horizontal é preferível por diversos fatores - principalmente por
+Com isso, a escalabilidade horizontal é preferível por diversos fatores - principalmente por
 permitir que seja possível ampliar a capacidade de processamento de requisições
 apenas aumentando a quantidade de nós (unidades de processamento/computadores).
 Além do que, dada uma arquitetura preparada, é possível fazer a automação da
