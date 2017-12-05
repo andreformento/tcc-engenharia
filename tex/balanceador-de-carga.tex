@@ -16,13 +16,13 @@ aumenta \cite{o-que-e-e-para-que-serve-o-balanceamento-de-carga}.
 
 \section{Balanceador de carga no serviço de reserva de ingressos}
 
-Utilizando-se do balanceamento de carga, o trabalho propõem tratar um problema que está relacionado com a exponencial
+Utilizando-se do balanceamento de carga, o trabalho propõe tratar um problema que está relacionado com a exponencial
 quantidade de requisições recebidas pelos servidores que hospedam sites de vendas de ingresso. A sobrecarga de um
 sistema pode ocorrer de maneira linear - com o passar dos anos, por exemplo; ou ainda, exponencial - algum pico de uso
 que pode ocorrer com o rápido aumento de requisições em questão de minutos.
 No caso do problema da reserva de ingressos, esses picos podem ocorrer regularmente a cada abertura da venda de ingressos.
 Com estes picos, cada vez que houver aumento de processamento das requisições e os servidores entrarem em
-estado de sobrecarga, mais servidores podem ser disponibilizados para atenderem a alta demanda.
+estado de sobrecarga, mais servidores podem ser disponibilizados para atender a alta demanda.
 O balanceador de carga ficaria responsável por distribuir a carga para esses novos servidores,
 tornando assim a estrutura escalável horizontalmente.
 
