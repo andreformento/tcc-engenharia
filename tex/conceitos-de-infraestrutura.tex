@@ -1,8 +1,7 @@
 \chapter{Conceitos de infraestrutura}
 
-Para rodar um software é necessário que haja um hardware. Para isso, é necessário
-que haja um servidor (hardware) para rodar uma aplicação (software). De modo geral,
-há duas estratégias de infraestrutura:
+Para rodar um software é necessário que haja um hardware. De modo geral,
+há duas estratégias de infraestrutura em que o hardware (servidor) antenderá a aplicação (software):
 local (\autoref{infraestrutura-local}) ou em nuvem (\autoref{infraestrutura-em-nuvem}).
 
 \begin{citacao}
@@ -27,38 +26,36 @@ Quando a insfraestrutura é local toda a responsabilidade é da empresa - manute
 compra de equipamentos e replicação do ambiente.
 Ou seja, há necessidade atualizar software, comprar licenças de todos os programas,
 fazer backup, garantir segurança física e lógica.
-Todos detalhes de como manter essa infra também são de responsabilidade própria empresa -
-como contratação de pessoas qualificadas, políticas de atualização
-e assim por diante.
+Todos os detalhes de como manter essa infra também são de responsabilidade da própria empresa -
+como contratação de pessoas qualificadas e políticas de atualização.
 
 Conforme \cite{beneficios-da-computacao-em-nuvem-para-sua-startup}, várias startups
 tem optado por computação em nuvem por diversos motivos. Dentre eles, um que se destaca
-em algo que pode ser muito relevante para a solução do problema da venda de ingressos é
+em algo que pode ser muito relevante para a solução do problema da venda de ingressos, 
 a escalablidade.
 
 \begin{citacao}
 Escalabilidade: Algo que é fundamental em qualquer startup é ser escalável.
 Com infraestrutura em nuvem, sua empresa tem flexibilidade para aumentar e
-diminuir os recursos conforme a demanda sem comprar novos equipamentos ou
-configurações complexas e instalações de
-sistemas \cite{beneficios-da-computacao-em-nuvem-para-sua-startup}.
+diminuir os recursos conforme a demanda, sem a necessidade de comprar novos equipamentos, 
+instalações de sistemas ou configurações complexas 
+\cite{beneficios-da-computacao-em-nuvem-para-sua-startup}.
 
 \end{citacao}
 
-Em uma organização que possui uma variação muito grande da quantidade demanda, lidar
-com a escalablidade pode se tornar desastroso quando for lidar com custos. Imaginando
+Em uma organização que possui uma variação muito grande da quantidade de demanda, lidar
+com a escalablidade pode se tornar algo desastroso quando fala-se em custos. Imaginando
 que a infraestrutura para atender a demanda da venda de ingressos estará limitada
-pelos recursos de hardware que a organização terá é possível imaginar que isso trará
+pelos recursos de hardware que a organização terá, é possível imaginar que isso trará
 vários problemas.
 
-Por exemplo, quando a demanda for alta para vender ingressos em um
-determinado horário - porque em alguma data é iniciada a venda de ingressos para um evento
-que tem muitos ingressos - precisaria de muita infraestrutura para atender a todas as
-requisições de modo que não houvesse lentidão ou indisponibilidade. Porém, fora deste
-período de muitas vendas essa infraestrutura seria subutilizada. Em um caso pior, pode
-ser que haja mais de um evento que tenham os ingressos com início das vendas no mesmo
-período. Desta forma, fica claro o problema de tentar manter um infraestrutura própria
-para atender todas as demandas.
+Por exemplo, Um cenário onde em um determinado horário a demanda por compra de ingressos 
+esteja atingindo altos indices, a ponto de a infraestrutura alocada não suporte atender 
+todas as requisições. Em um primerio momento, enxerga-se como solução a aquisição de mais 
+equipemantos para suprir essa ineficiência. Porém, fora deste período de muitas vendas, essa
+infraestrutura seria subutilizada. Em um caso pior, pode ser que haja mais de um evento que
+tenham os ingressos com início das vendas no mesmo período. Desta forma, fica claro o problema
+de tentar manter um infraestrutura própria para atender todas as demandas.
 
 A ideia principal é que essa infraestrutura seja obtida de forma dinâmica. Por isso,
 ter uma infraestrutura local, ou própria, é inviável para a solução do problema da
@@ -81,7 +78,7 @@ Para ter acesso aos arquivos, basta que o usuário do cloud tenha acesso à inte
 
 Não é necessário grande investimento inicial para disponibilizar uma aplicação web.
 Como o pagamento é pelo que for utilizado, se uma aplicação em determinado período tem
-poucos acesso, então, pagará pouco; nos momento onde há grande demanda, pagará por aquilo
+poucos acessos, então, pagará pouco; nos momentos onde há grande demanda, pagará por aquilo
 que estiver utilizando. E é justamente essa flexibilidade que é fundamental para o sucesso
 da solução proposta. Ou seja, toda a demanda de compra de ingressos poderá ser atendida
 sem necessidade de investimentos em infraestrutura.
@@ -100,7 +97,7 @@ de reserva de ingressos.
 Com a popularização da computação em nuvem houve um aumento dos produtos e opções de
 serviços disponíveis.
 Desta forma, foram criados vários modelos e estratégias para utilização da computação
-em nuvem, onde cada uma dessas estratégias foca em determinado nível de abstração.
+em nuvem, onde cada uma dessas estratégias foca em um determinado nível de abstração.
 Há três principais formatos de nuvem que podem ser explorados:
 IaaS (\autoref{iaas}), PaaS (\autoref{paas}) e SaaS (\autoref{saas}).
 Recentamente vem surgindo um quarto formato que ainda é visto pelo mercado com
@@ -116,7 +113,7 @@ cautela: BaaS (\autoref{baas}).
 
 No modelo Infrastructure as a Service (IaaS), ou Infra-estrutura como Serviço,
 não há controle sobre o sistema operacional. O objetivo é o fornecimento
-de recursos de computação necessário para poder rodar uma aplicação. Há acesso (virtual
+de recursos de computação necessários para rodar uma aplicação. Há acesso (virtual
 ou hardware dedicado) em recursos de rede, computadores e acesso para armazenamento
 de dados.
 Um exemplo é o produto EC2 da Amazon.
@@ -128,7 +125,7 @@ Um exemplo é o produto EC2 da Amazon.
 \subsubsection{PaaS}\label{paas}
 
 No modelo Plataform as a Service (PaaS), ou Plataforma como Serviço,
-o foco é no gerenciamento da implantação e gerenciamento das aplicações.
+o foco é no gerenciamento da implantação e das aplicações.
 Não há preocupação com aquisição de recursos, planejamento de capacidade,
 manutenção de software, patching ou qualquer outro trabalho de baixo nível.
 O Google AppEngine e a Amazon S3 são exemplos de PaaS.
@@ -150,8 +147,8 @@ Functions as a service (FaaS).
 Nele fica abstraído inclusive a arquitetura de software da aplicação,
 tendo como opção apenas desenvolver funções internas para execução. Desta forma, há grande
 dependência da plataforma em que roda a aplicação.
-Há vários serviços que podem ser facilmente consumidos como serviço de chat, segurança com
-OAuth, dentro outros.
+Há vários serviços que podem ser facilmente consumidos como, serviço de chat, segurança com
+OAuth, dentre outros.
 Conforme \cite{martin-serverless}, há uma dependência também do ambiente em que roda o
 código fonte, podendo inclusive necessitar de manutenção posterior em algo que está
 funcionando pelo simples fato do fornecedor realizar alguma atualização.
@@ -176,7 +173,7 @@ não existirá disponível. Como é o caso da reserva de ingressos.
 Por isso, a escolha da tipologia foi de utilizar o modelo IaaS \autoref{iaas},
 onde será possível instalar e escalar o serviço desenvolvido.
 Essa infraestrutura em nuvem não foi implementada, mas da maneira como foi construído
-e disponibilizado o serviço de reserva de ingressos é possível usar qualquer modelo
+e disponibilizado o serviço de reserva de ingressos, é possível usar qualquer modelo
 de de IaaS disponível hoje no mercado, dependendo apenas de um sistema operacional
 Linux.
 
