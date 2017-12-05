@@ -1,15 +1,14 @@
 \chapter{Objetivo}
 
-O objetivo principal é tornar viável a arquitetura de um sistema web para atender
-a alta demanda de requisições de um site que possui grande oscilação na quantidade de
-requisições que recebe.
+O objetivo principal é tornar viável a arquitetura de um sistema web, atendendo com eficiêmcia 
+as oscilações das quantidades de requisições que recebe, de altas demandas aos tempos de ociosidade.
 Por exemplo, no momento da abertura das vendas de ingressos para um determinado evento
 que ocorre normalmente em datas e horários específicos. É necessário atender grande demanda
 em momentos de venda e também é preciso que haja otimização do sistema quando estiver ocioso.
 Ou seja, reduzir a quantidade de recursos utilizados quando não houver
 grande demanda - reduzindo o custo.
 
-\section{Escalabilidade e microserviços}
+\section{Escalabilidade e microsserviços}
 A escalabilidade (\autoref{escalabilidade}) é a parte mais relevante desse projeto.
 Tornar um sistema escalável é um grande desafio.
 Para ser possível, vários pontos da arquitetura devem ter a
@@ -19,7 +18,7 @@ A abordagem de microserviços (\autoref{microservicos}) é uma técnica que ser�
 com o intuito de evitar pontos únicos de falha e boa divisão de responsabilidades
 - através de contextos bem definidos, possibilitando a criação de serviços que
 atendam especificamente um contexto.
-A utilização do conceito de microserviços possibilitará a escalabilidade de maneira
+A utilização do conceito de microsserviços possibilitará a escalabilidade de maneira
 simplificada, rápida e de acordo com o que é visto atualmente no mercado.
 
 \section{Implementação da reserva de ingressos}
@@ -29,15 +28,14 @@ atenderá requisições no contexto de reserva de ingressos.
 Porém, um sistema de vendas de ingressos online é abrangente e envolve divulgação,
 exibição de eventos, assentos disponíveis, valores e reserva do ingresso -
 que é limitada, assim como a venda e suporte pós-venda. Um sistema completo possui essas
-e outras características. Do ponto de visto teórico, várias das abordagens discutidas
-podem ser utilizadas em muitos desses pontos.
+e outras características.
 
 A implementação do serviço de reserva de ingressos terá o código discutido
 em detalhes (\autoref{implementacao-do-servico}). Não há implementação
 de interface do usuário (frontend), apenas a implementação dos algoritmos
 que rodam nos servidores (backend).
 
-Com microserviços, vários dos itens abordados poderão ser aplicados em outras partes
+Com microsserviços, vários dos itens abordados poderão ser aplicados em outras partes
 de um sistema
 de venda de ingressos, em formato de serviços que terão os mais diversos contextos.
 A aplicação terá uma API REST (\autoref{api}) que responderá requisições
@@ -56,7 +54,7 @@ a escalabilidade necessária no momento de alta demanda da venda de ingressos.
 
 \subsection{Ferramentas de infraestrutura}
 
-\index{alíneas}\index{subalíneas}\index{incisos}Ter vários microserviços implica em gerenciar
+\index{alíneas}\index{subalíneas}\index{incisos}Ter vários microsserviços implica em gerenciar
 vários sistemas.
 Para ter sucesso neste gerenciamento é fundamental que haja automação
 \cite{martin-fowler-microservices}.
@@ -69,7 +67,7 @@ irão facilitar a manutenção, escalabilidade e monitoramento:
 
   \begin{alineas}
      \item Para criação, teste e implantação de aplicações \cite{aws-o-que-e-o-docker}
-     \item Os scripts para rodar a aplicação usarão a ferramenta
+     \item Os scripts para rodar a aplicação usaram a ferramenta
            (\autoref{como-rodar-a-aplicacao})
   \end{alineas}
 
