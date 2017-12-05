@@ -1,11 +1,11 @@
-\chapter{Microserviços}\label{microservicos}
+\chapter{Microsserviços}\label{microservicos}
 
 Como expressado por
-\cite{building-microservices}, ``Microserviços são pequenos serviços
+\cite{building-microservices}, ``Microsserviços são pequenos serviços
 autônomos que trabalham em conjunto``.
 
 \begin{citacao}
-Em suma, o estilo arquitetônico do microserviço é uma abordagem para desenvolver
+Em suma, o estilo arquitetônico do microsserviço é uma abordagem para desenvolver
 uma única aplicação como um conjunto de pequenos serviços, cada um executando em seu próprio processo e se comunicando
 com mecanismos leves, muitas vezes uma API de recursos HTTP. Esses serviços são construídos em torno de recursos de
 negócios e implementáveis independentemente por meio de maquinaria de implantação totalmente automatizada.
@@ -13,7 +13,7 @@ Existe um mínimo de gerenciamento centralizado desses serviços, que pode ser e
 programação e usar diferentes tecnologias de armazenamento de dados \cite{martin-fowler-microservices}.
 \end{citacao}
 
-Com microserviços é possível escalar apenas algumas partes do sistema, diminuindo
+Com microsserviços é possível escalar apenas algumas partes do sistema, diminuindo
 o custo e esforço para aumentar o poder de processamento para atender muitas requisições.
 
 Pode haver um serviço que cuida do contexto do usuário; outro serviço que lida com a
@@ -68,7 +68,7 @@ envolvendo os serviços.
 Desta forma, o serviço de reserva de ingressos terá uma camada a mais
 para ser acessada, abstraindo a segurança para esta camada.
 
-\section{Comparação entre microserviços e sistemas monolíticos}\label{microservicos-monoliticos}
+\section{Comparação entre microsserviços e sistemas monolíticos}\label{microservicos-monoliticos}
 
 Um sistema é considerado monolítico quando todas as implementações estão em um mesma base de código
 e há forte dependência entre os módulos no nível de código.
@@ -87,7 +87,7 @@ acopladas à solução.
 Mesmo contendo várias bibliotecas, todas estarão atreladas ao mesmo processo.
 Uma vez que se faz alterações em qualquer delas, resulta em uma implantação do sistema inteiro.
 
-Nos microserviços a independência de sua implantação é algo tido como uma das razões para
+Nos microsserviços a independência de sua implantação é algo tido como uma das razões para
 utilizá-los ao invés das bibliotecas.
 
 Com o aumento do desenvolvimento de aplicações cresce a base de código.
@@ -104,7 +104,7 @@ Com isso, não importa em qual linguagem é desenvolvido o serviço.
 Mantendo o contrato, podem haver alterações, manutenções, melhorias, reimplementações,
 e assim por diante, sem afetar quem utiliza aquele serviço.
 
-As vantagens em microserviços abrangem inclusive a equipe atuante no desenvolvimento, já que com nesse paradigma,
+As vantagens em microsserviços abrangem inclusive a equipe atuante no desenvolvimento, já que com nesse paradigma,
 elas planejam uma atuação em serviços diferentes, sem que essas mudanças afetem os demais integrantes.
 Adere a escalabilidade de forma seletiva, possibilitando escalar somente a parte do sistema que necessita de ajustes.
 A divisão do sistema também beneficia a velocidade de desenvolvimento, o código é de fácil entendimento e
