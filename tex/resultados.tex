@@ -21,7 +21,7 @@ com que o software roda. Ou seja, há um desacoplamento da infraestrutura com o 
 
 Foram feitos vários testes em cima do serviço de reserva de ingressos que foi implementado
 (\autoref{implementacao-do-servico}) para saber quais eram seus limites.
-É importante deixar claro que a análise ocorrera em um notebook pessoal com poder
+É importante deixar claro que a análise ocorrerá em um notebook pessoal com poder
 de processamento limitado, conforme descrito no
 \autoref{anexo-especificacao-de-hardware-do-servidor}.
 Em um ambiente real (nuvem \autoref{infraestrutura-em-nuvem})
@@ -31,7 +31,7 @@ permitindo que os números exibidos abaixo sejam muito maiores.
 
 \subsection{Gatling: ferramenta para geração da análise de desempenho}
 
-Os testes de perfomance realizados em cima da aplição de reserva de ingressos foram
+Os testes de performance realizados em cima da aplicação de reserva de ingressos foram
 feitos com a ferramenta Gatling na versão 2.3.
 Com a ferramenta é possível testar alta performance de aplicações web
 \cite{gatling-docs} que seguem o protocolo HTTP.
@@ -50,16 +50,16 @@ foram configuradas para serem executadas no período de 10 segundos.
 Os testes foram feitos para medir a degradação do sistema em relação ao aumento do
 número de requisições simulando um ambiente onde haveriam muitas requisições para
 reserva de ingressos.
-Com a degração do sistema as respostas começam a demorar mais, ou seja,
+Com a degradação do sistema as respostas começam a demorar mais, ou seja,
 o teste demora mais para ser finalizado conforme o aumento do número de requisições.
 Com isso, o único parâmetro que muda de um teste para o outro
 é o número de requisições realizadas.
 
 Na \autoref{03000-requests-config-10s-duration-10} são feitas 3.000 requisições apenas.
-O sistema responde todas elas com sucesso e um desvio padrão de 241 milisegundos
+O sistema responde todas elas com sucesso e um desvio padrão de 241 milissegundos
 para o tempo de resposta das requisições.
-97\% das requisições respondem em menos de 800 milisegundos e apenas 3\% das requisições
-respondem em até 1.200 milisegundos.
+97\% das requisições respondem em menos de 800 milissegundos e apenas 3\% das requisições
+respondem em até 1.200 milissegundos.
 
 \begin{figure}[h]
   \includegraphics[width=\textwidth]{03000-requests-config-10s-duration-10}
@@ -68,11 +68,11 @@ respondem em até 1.200 milisegundos.
 \end{figure}
 
 Na \autoref{05000-requests-config-10s-duration-10} são feitas 5.000 requisições.
-O sistema responde todas elas com sucesso e um desvio padrão aumenta para 569 milisegundos
+O sistema responde todas elas com sucesso e um desvio padrão aumenta para 569 milissegundos
 para o tempo de resposta das requisições.
-78\% das requisições respondem em menos de 800 milisegundos, 18\% das requisições
-respondem em até 1.200 milisegundos e apenas 4\% das requisições
-respondem com tempo maior que 1.200 milisegundos.
+78\% das requisições respondem em menos de 800 milissegundos, 18\% das requisições
+respondem em até 1.200 milissegundos e apenas 4\% das requisições
+respondem com tempo maior que 1.200 milissegundos.
 
 \begin{figure}[h]
   \includegraphics[width=\textwidth]{05000-requests-config-10s-duration-10}
@@ -81,11 +81,11 @@ respondem com tempo maior que 1.200 milisegundos.
 \end{figure}
 
 Na \autoref{10000-requests-config-10s-duration-13} são feitas 10.000 requisições.
-O sistema responde todas elas com sucesso e um desvio padrão aumenta para 1117 milisegundos
+O sistema responde todas elas com sucesso e um desvio padrão aumenta para 1117 milissegundos
 para o tempo de resposta das requisições.
-5\% das requisições respondem em menos de 800 milisegundos, 3\% das requisições
-respondem em até 1.200 milisegundos e apenas 93\% das requisições
-respondem com tempo maior que 1.200 milisegundos. Aqui fica claro que há grande
+5\% das requisições respondem em menos de 800 milissegundos, 3\% das requisições
+respondem em até 1.200 milissegundos e apenas 93\% das requisições
+respondem com tempo maior que 1.200 milissegundos. Aqui fica claro que há grande
 degradação do sistema quanto ao tempo de resposta. Porém, o mais importante
 é que todas as requisições foram atendidas e o tempo ainda é aceitável para
 um ambiente de produção.
