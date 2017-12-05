@@ -33,7 +33,7 @@ a técnica de imutabilidade traz vários benefícios:
 
   \item Objetos imutáveis facilitam a programação concorrente;
 
-  \item Como a implementação foi em Java, traz benefícios quanto ao algorítimo do
+  \item Como a implementação foi em Java, traz benefícios quanto ao algorítmo do
         Garbage Collector;
 
   \item Mudança indesejada em códigos dispersos;
@@ -44,7 +44,7 @@ a técnica de imutabilidade traz vários benefícios:
 
 \lstset{language=Java,keywordstyle={\bfseries \color{blue}}}
 
-O primeiro ponto é o mais relevante para a solução, visto que, concorrencia
+O primeiro ponto é o mais relevante para a solução, visto que, concorrência
 eficiente é um dos pontos mais importantes. Com a palavra chave \textbf{final} é
 possível definir que os atributos da classe não poderão ser alterados depois
 de inicializados, conforme exemplo do \autoref{classe-ticket-reservation}. O
@@ -100,7 +100,7 @@ Esta classe possui dependência de duas classes:
   \begin{alineas}
      \item Fica na camada \textbf{business};
      \item Responsável por lidar com as regras de negócio/lógica do ingresso;
-     \item É ela a reponsável por lidar com as validações;
+     \item É ela a responsável por lidar com as validações;
   \end{alineas}
 
   \item \textbf{TicketReservationMapper}
@@ -110,7 +110,7 @@ Esta classe possui dependência de duas classes:
      \item Responsável por converter o que vem de fora da aplicação e transformar
            no padrão adotado dentro da aplicação;
      \item E também o inverso do item anterior: o que for gerado dentro da aplicação -
-           seguindo um padrão definido, ela é reponsável por converter
+           seguindo um padrão definido, ela é responsável por converter
            os dados a serem expostos de modo que mantenha um contrato pré-determinado
   \end{alineas}
 
@@ -209,7 +209,7 @@ conforme \citeonline{redis-cluster-specification}.
 
 %\subsection{ACID}
 
-Um banco de dados em memória prove uma excelente taxa de leitura e escrita, conforme
+Um banco de dados em memória provê uma excelente taxa de leitura e escrita, conforme
 \citeonline{a-performance-evaluation-of-in-memory-databases}.
 Com isso, é possível responder com as reservas de ingressos de maneira que todas elas
 sejam disponibilizadas até que se esgotem as vagas.
