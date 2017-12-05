@@ -13,11 +13,12 @@ o conjunto e auxiliar no processamento dos dados.
 
 
 O balanceamento de rede, consiste na técnica de distribuição de tráfego de rede entre servidores. Essa solução visa entregar
-caminhos alternativos a fim de descongestionar os acessos atendendo um número maior de requisições. A segunda geração dos
-balanceadores de carga são seguidos pelos sistemas proprietários baseados em aplicativos. Se comportam de forma transparente
+caminhos alternativos a fim de descongestionar os acessos atendendo um número maior de requisições. A segunda camada do
+balanceador de carga é lógica e tratada por software. Se comportam de forma transparente
 as aplicações, ou seja, quando um único servidor não comporta toda carga gerada, é possível iniciar uma nova instância em
 outro servidor e balancear a aplicação entre eles.
 
+\section{Balanceador de carga no serviço de reserva de ingressos}
 
 Utilizando-se do balanceamento de carga, o trabalho propõem tratar um problema que está relacionado com a exponencial
 quantidade de requisições recebidas pelos servidores que hospedam sites de vendas de ingresso. A sobrecarga de um
@@ -29,7 +30,8 @@ estado de sobrecarga, mais servidores podem ser disponibilizados para atenderem 
 O balanceador de carga ficaria responsável por distribuir a carga para esses novos servidores,
 tornando assim a estrutura escalável horizontalmente.
 
-Sugere-se como uma solução que atende as exigências citadas a utilização de balanceamento de carga baseado em hardware.
+Sugere-se como uma camada solução que atende as exigências citadas a utilização de balanceamento de carga baseado 
+em hardware.
 Essa tecnologia tem por base dispositivos de rede. Esses diapositivos são neutros em relação aos aplicativos, dessa forma
 consegue-se atuar em qualquer plataforma. Em resumo, os componentes oferecem um "servidor virtual" para todos os serviços
 que requerem acesso, quando o servidor aceita a requisição, encaminha a mesma para o "servidor real" disponível para atender
