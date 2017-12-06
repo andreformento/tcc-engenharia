@@ -198,15 +198,38 @@ realizar a reserva de um lugar em um determinado evento para um usuário.
 
 \begin{enumerate}
 
-  \item esquema ou protocolo da requisição;
+  \item Esquema ou protocolo da requisição;
 
-  \item endereço da aplicação;
+  \item Endereço da aplicação;
 
-  \item porta de acesso à aplicação;
+  \item Porta de acesso à aplicação;
 
-  \item nome do recurso único da aplicação (URI);
+  \item Nome do recurso único da aplicação (URI);
 
-  \item identificação do evento que será feita a reserva.
+  \item Identificação do evento que será feita a reserva.
+
+\end{enumerate}
+
+Ainda sobre o protocolo HTTP,
+ele permite que ao utilizar o método POST seja enviado
+o corpo da requisição.
+
+\begin{minipage}{\linewidth}
+\begin{lstlisting}[basicstyle=\ttfamily]
+{"idUser": "uuid123", "count": 3}
+           (1)                (2)
+\end{lstlisting}
+\end{minipage}
+
+\index{enumerate}Neste caso ele deve seguir o formato JSON, onde:
+
+\begin{enumerate}
+
+  \item Código do usuário que solicitou a reserva de ingresso.
+        No exemplo o código do usuário é uuid123.
+
+  \item Quantidade de ingressos que pretende reservar.
+        Neste caso a quantidade foi de 3 ingressos.
 
 \end{enumerate}
 
