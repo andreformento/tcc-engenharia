@@ -5,22 +5,20 @@
 
 % escrever o serviço em outra linguagem
 
-Em um contexto de um sistema de venda de ingressos, poderiam ser feitos serviços que atendessem
+%Um serviço isolado desta forma permite a sua reescrita em outra linguagem de programação
+%sem que haja o efeito colateral nos clientes que o utilizam.
+
+
+Em um contexto de um sistema de venda de ingressos, podem ser feitos serviços que atendam
 outras necessidades de negócio, como serviço de venda do ingresso, serviço de listagem de eventos
 e assim por diante.
-Também poderiam ser abordados temas como segurança, controles de acesso e serviço de usuário.
+Também pode ser abordado o tema de segurança, controle de acesso e serviço de usuário.
 
-Poderia ser feito um trabalho com uma abordagem diferente para lidar com a venda de ingressos.
-Há outras linguagens que lidam com concorrência de maneira mais otimizada,
-proporcionando assim uma melhora no tempo de resposta da aplicação com a mesma quantidade
-de recursos.
-O Whatsapp, por exemplo, utiliza a linguagem Erlang \citeonline{why-whatsapp-used-erlang} que
-atende milhares de requisições por segundo.
+Conforme a conclusão deixou claro, houve degradação do serviço ao realizar muitas requisições.
+Pode ser implementado um novo serviço em um linguagem que seja específica para trabalhar
+com concorrência.
+Também pode ser implementado o modelo de microsserviços com a abordagem de coreografia,
+permitindo que ele seja assíncrono.
 
-Há também uma abordagem de microsserviços utilizando o modelo de coreografia, onde seria possível
-lidar com o atendimento de muitas requisições de maneira assíncrona, conforme dito por
-\cite{scaling-microservices-event-stream}.
-
-Atualmente não é possível que um usuário final faça uma iteração com a aplicação. O desenvolvimento
-de uma aplicação frontend, como mobile ou website, poderia explorar o aspecto de usabilidade
-do sistema.
+Pode ser implementada a aplicação frontend, como mobile ou website,
+explorando o aspecto de usabilidade do sistema.
