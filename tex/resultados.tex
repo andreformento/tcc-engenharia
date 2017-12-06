@@ -99,14 +99,11 @@ um ambiente de produção.
 A \autoref{28000-requests-config-30s-duration-34} possui o tempo de teste configurado
 com 30 segundos de execução.
 O que se pode concluir com os dados analisados é que a aplicação consegue atender
-em torno de 28.000 requests com sucesso em 30 segundos com desvio padrão de
-4111 milisegundos.
+em torno de 28.000 requests com sucesso em 34 segundos com desvio padrão de
+4.111 milisegundos.
 O tempo de respostas é considerado alto - imaginando um usuário aguardando em
 torno de 5 segundos para saber se sua reserva foi realizada.
 Porém, a solicitação da reserva é atendida.
-
-Com a escalabilidade horizontal é possível começar a expandir esse poder de processamento.
-Com mais máquinas disponíveis o tempo de resposta das aplicações poderia ser reduzido.
 
 \begin{figure}[h]
   \includegraphics[width=\textwidth]{28000-requests-config-30s-duration-34}
@@ -114,5 +111,23 @@ Com mais máquinas disponíveis o tempo de resposta das aplicações poderia ser
   \label{28000-requests-config-30s-duration-34}
 \end{figure}
 
-Todos os resultados com todos os testes realizados pode ser consultados de maneira
+A \autoref{30000-requests-config-10s-duration-33} possui o tempo de teste configurado
+com 10 segundos de execução.
+O que se pode concluir com os dados analisados é que a aplicação consegue atender
+em torno de 28.000 requests com sucesso em 33 segundos com desvio padrão de
+5.766 milisegundos.
+O tempo de resposta aumenta mais ainda.
+Comparando com a \autoref{28000-requests-config-30s-duration-34}, é possível ver
+que a quantidade de respostas sem erros no servidor chega ao seu limite.
+A partir das 28.000 requests o servidor começa a ter problemas de conexão.
+
+\begin{figure}[h]
+  \includegraphics[width=\textwidth]{30000-requests-config-10s-duration-33}
+  \caption{Dados do Gatling com 30.000 requisições executados em 33 segundos}
+  \label{30000-requests-config-10s-duration-33}
+\end{figure}
+
+Com a escalabilidade horizontal é possível começar a expandir esse poder de processamento.
+
+Todos os resultados com todos os testes realizados podem ser consultados de maneira
 iterativa através do link \url{https://andreformento.github.io/term-paper/index.html}.
