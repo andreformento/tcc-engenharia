@@ -7,7 +7,10 @@
 A parte prática do trabalho implementa o serviço de reserva de ingressos.
 Para reservar um ingresso é necessário que haja a informação de quantos ingressos
 estão disponíveis em um determinado evento.
-
+Então, ele é responsável pela lógica da disponibilidade de lugares no evento.
+Ou seja, ele fica responsável por reservar lugares até que a capacidade do
+evento permita e, quando todos os lugares disponíveis forem reservados,
+ele responderá as requisições com a informação de que o evento está lotado.
 
 Por questão de escopo do trabalho,
 foram ignorados detalhes como
@@ -83,8 +86,8 @@ de documentação a partir do código, etc.
 \subsection{API - o contrato do serviço}\label{api}
 
 A aplicação desenvolvida gera uma API REST (\autoref{rest}) que é responsável por fazer uma reserva
-no evento solicitado. Desta forma, este serviço atende o escopo de reserva de lugar no
-evento. Conforme exibido no \autoref{classe-ticket-reservation-reservation-controller}, existe um endpoint responsável
+no evento solicitado.
+Conforme exibido no \autoref{classe-ticket-reservation-reservation-controller}, existe um endpoint responsável
 por fazer essa reserva. Ele tem um contrato que permite que seja informado o evento e
 o usuário para realizar a reserva, simplificando a sua utilização.
 
