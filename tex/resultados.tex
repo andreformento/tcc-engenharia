@@ -23,7 +23,7 @@ Foram feitos vários testes em cima do serviço de reserva de ingressos que foi 
 (\autoref{implementacao-do-servico}) para saber quais eram seus limites.
 É importante deixar claro que a análise ocorreu em um notebook pessoal com poder
 de processamento limitado, conforme descrito no
-\autoref{anexo-especificacao-de-hardware-do-servidor}.
+(\autoref{anexo-especificacao-de-hardware-do-servidor}).
 Em um ambiente real (nuvem \autoref{infraestrutura-em-nuvem})
 poderão existir diversas máquinas disponíveis para que sejam utilizadas
 (escalabilidade horizontal \autoref{escalabilidade})
@@ -44,7 +44,7 @@ que o Gatling possui, simulando assim a utilização simultânea do sistema por
 grande quantidade de usuários.
 As requisições da análise da
 \autoref{03000-requests-config-10s-duration-10},
-\autoref{05000-requests-config-10s-duration-10}
+(\autoref{05000-requests-config-10s-duration-10}
 e \autoref{10000-requests-config-10s-duration-13}
 foram configuradas para serem executadas no período de 10 segundos.
 Os testes foram feitos para medir a degradação do sistema em relação ao aumento do
@@ -104,7 +104,7 @@ A \autoref{28000-requests-config-30s-duration-34} possui o tempo de teste config
 com 30 segundos de execução.
 O que se pode concluir com os dados analisados é que a aplicação consegue atender
 em torno de 28.000 requests com sucesso em 34 segundos com desvio padrão de
-4.111 milisegundos.
+4.111 milissegundos.
 O tempo de respostas é considerado alto - imaginando um usuário aguardando em
 torno de 5 segundos para saber se sua reserva foi realizada.
 Porém, a solicitação da reserva é atendida.
@@ -119,7 +119,7 @@ A \autoref{30000-requests-config-10s-duration-33} possui o tempo de teste config
 com 10 segundos de execução.
 O que se pode concluir com os dados analisados é que a aplicação consegue atender
 em torno de 28.000 requests com sucesso em 33 segundos com desvio padrão de
-5.766 milisegundos.
+5.766 milissegundos.
 O tempo de resposta aumenta mais ainda.
 Comparando com a \autoref{28000-requests-config-30s-duration-34}, é possível ver
 que a quantidade de respostas sem erros no servidor chega ao seu limite.
