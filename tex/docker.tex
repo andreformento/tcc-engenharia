@@ -22,7 +22,7 @@ sistema operacional dentro de um único hospedeiro \cite{sinestec-01}.
 Conforme a citação anterior, é possível executar vários serviços dentro de uma mesma máquina, podendo ser serviços
 replicados ou vários tipos diferentes de serviços.
 Na aplicação de reserva de ingressos, que foi desenvolvida em Java e precisa de uma JVM para rodar, não precisaria
-de nenhuma instalação de programa na máquina.
+de nenhuma configuração ou instalação de programa na máquina - o único requisito é o Docker.
 Tudo estaria instalado dentro da imagem Docker criada para rodar a aplicação.
 Então, o banco de dados, ou outro serviço que a aplicação dependesse, também poderia rodar em um contêiner Docker.
 Ficaria fácil até mesmo trocar toda a implementação para rodar em outra linguagem.
@@ -37,15 +37,15 @@ todos esses sistemas simultaneamente, e nossa máquina física travaria\cite{apr
 \end{citacao}
 
 
-Quando se questiona de software, as vantagens da utilização do docker estão em servir como instrumento versátil, 
-que entrega um ambiente pronto para rodar aplicações. Essa versatilidade pode ser aproveitada para iniciar 
+Quando se questiona de software, as vantagens da utilização do docker estão em servir como instrumento versátil,
+que entrega um ambiente pronto para rodar aplicações. Essa versatilidade pode ser aproveitada para iniciar
 serviços rapidamente e responder a aplicação de forma assertiva.
 
 
 \begin{citacao}
-O Docker possibilita o empacotamento de uma aplicação ou ambiente inteiro dentro de um contêiner, e a partir 
+O Docker possibilita o empacotamento de uma aplicação ou ambiente inteiro dentro de um contêiner, e a partir
 desse momento o ambiente inteiro torna-se portável para qualquer outro Host que contenha o Docker instalado.
-Isso reduz drasticamente o tempo de deploy de alguma infraestrutura ou até mesmo aplicação, pois não há 
+Isso reduz drasticamente o tempo de deploy de alguma infraestrutura ou até mesmo aplicação, pois não há
 necessidade de ajustes de ambiente para o correto funcionamento do serviço, o ambiente é sempre o mesmo, configure-o uma vez e replique-o quantas vezes
 quiser \cite{mundodocker-o-que-e-docker}.
 \end{citacao}
