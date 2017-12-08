@@ -6,6 +6,9 @@
 
 [Implementação da solução](https://github.com/andreformento/term-paper)
 
+[Apresentação](https://docs.google.com/presentation/d/1Iv3kWc8ihcR-xxuHKr8Jp4kjHzACgocw20Ej2mS1GqY/edit#slide=id.g2b92f6d734_0_1778)
+
+
 ## Publicar automaticamente
 
 Para que a monografia seja gerada automaticamente é preciso criar uma nova tag. Quando uma nova tag for criada, [um hook do Travis](https://travis-ci.org/andreformento/tcc-engenharia) é disparado e um Job cria o PDF e coloca no [link de releases](https://github.com/andreformento/tcc-engenharia/releases/latest)
