@@ -8,6 +8,8 @@
 
 [Apresentação](https://docs.google.com/presentation/d/1Iv3kWc8ihcR-xxuHKr8Jp4kjHzACgocw20Ej2mS1GqY/edit?usp=sharing)
 
+[Gráficos](https://andreformento.github.io/term-paper/index.html)
+
 
 ## Publicar automaticamente
 
