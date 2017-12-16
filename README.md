@@ -6,7 +6,7 @@
 
 [Implementação da solução](https://github.com/andreformento/term-paper)
 
-[Apresentação](https://docs.google.com/presentation/d/1Iv3kWc8ihcR-xxuHKr8Jp4kjHzACgocw20Ej2mS1GqY/edit#slide=id.g2b92f6d734_0_1778)
+[Apresentação](https://docs.google.com/presentation/d/1Iv3kWc8ihcR-xxuHKr8Jp4kjHzACgocw20Ej2mS1GqY/edit?usp=sharing)
 
 
 ## Publicar automaticamente
