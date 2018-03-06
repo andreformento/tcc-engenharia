@@ -75,6 +75,9 @@
 \usepackage{pgf-umlsd}
 \usepgflibrary{arrows} % for pgf-umlsd
 
+% para adicionar o pdf da folha de aprovação
+\usepackage{pdfpages}
+
 % Formatação de código-fonte
 \usepackage{listings}
 
@@ -229,41 +232,41 @@
 % do trabalho. Após isso, substitua todo o conteúdo deste arquivo por uma
 % imagem da página assinada pela banca com o comando abaixo:
 %
-% \includepdf{folhadeaprovacao_final.pdf}
-%
 \begin{folhadeaprovacao}
-
-	\begin{center}
-	{\ABNTEXchapterfont\large\imprimirautor}
-
-	\vspace*{\fill}\vspace*{\fill}
-	\begin{center}
-		\ABNTEXchapterfont\bfseries\Large\imprimirtitulo
-	\end{center}
-	\vspace*{\fill}
-
-	\hspace{.45\textwidth}
-	\begin{minipage}{.5\textwidth}
-		\imprimirpreambulo
-	\end{minipage}%
-	\vspace*{\fill}
-	\end{center}
-
-	Trabalho aprovado. \imprimirlocal, 20 de dezembro de 2017:
-
-	\assinatura{\textbf{\imprimirorientador} \\ Orientador}
-	% \assinatura{\textbf{Professor} \\ Convidado 1}
-	% \assinatura{\textbf{Professor} \\ Convidado 2}
-
-	\begin{center}
-	\vspace*{0.5cm}
-	{\large\imprimirlocal}
-	\par
-	{\large\imprimirdata}
-	\vspace*{1cm}
-	\end{center}
-
+\includepdf{folhadeaprovacaofinal.pdf}
 \end{folhadeaprovacao}
+%
+% \begin{folhadeaprovacao}
+%
+% 	\begin{center}
+% 	{\ABNTEXchapterfont\large\imprimirautor}
+%
+% 	\vspace*{\fill}\vspace*{\fill}
+% 	\begin{center}
+% 		\ABNTEXchapterfont\bfseries\Large\imprimirtitulo
+% 	\end{center}
+% 	\vspace*{\fill}
+%
+% 	\hspace{.45\textwidth}
+% 	\begin{minipage}{.5\textwidth}
+% 		\imprimirpreambulo
+% 	\end{minipage}%
+% 	\vspace*{\fill}
+% 	\end{center}
+%
+% 	Trabalho aprovado. \imprimirlocal, 20 de dezembro de 2017:
+%
+% 	\assinatura{\textbf{\imprimirorientador} \\ Orientador}
+%
+% 	\begin{center}
+% 	\vspace*{0.5cm}
+% 	{\large\imprimirlocal}
+% 	\par
+% 	{\large\imprimirdata}
+% 	\vspace*{1cm}
+% 	\end{center}
+%
+% \end{folhadeaprovacao}
 % ---
 
 % isso aqui faz com que o sumário não quebre
